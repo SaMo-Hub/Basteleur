@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basteleur Défilant</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="">
+      <div class="text-defilement">
+        <div class="defilement-conteneur">
+          <p>AaBbCcDdEeFfGgHhIiJjKkLlMmOoPpQq</p>
+          <p>AaBbCcDdEeFfGgHhIiJjKkLlMmOoPpQq</p>
+        </div>
+      </div>
+
+      <hr />
+      <div class="">
+        <div class="info">
+          <div class="sous-titre">
+            <div class="rond"></div>
+            info
+          </div>
+
+          <div class="info-texte">
+
+            <div id="info1" class="info-div">
+              <div onclick="toggleInfo('info1')" class="info-title">
+                <p class="">
+                  Histoire et inspirations
+                </p>
+                <div class="rond"></div>
+              </div>
+
+              <div class="info-paragraphe">
+                <!-- <p class="info-big-letter">A</p> -->
+                <p class="">
+                  Approchez… Je suis Basteleur Moonlight, une typographie qui danse entre l'ombre et la lumière, née de l’intersection de traditions mystiques et de formes typographiques ancestrales. Si vous vous aventurez dans mon histoire, vous découvrirez que ma véritable inspiration trouve son origine dans les arcanes du Tarot de Marseille, plus particulièrement la carte du Bateleur.
+                  Je suis l’œuvre du studio Keussel, studio passionné par l’univers du le‡ttrage artisanal, du dessin de caractères et de la magie graphique. Conçu en 2022, mon design est une fusion entre des influences ésotériques, des références à l’histoire de la typographie et une touche contemporaine qui me rend unique.
+                  Le Magicien est un personnage emblématique du Tarot de Marseille, représentant le pouvoir de transformation, la création et l’illusion. La carte symbolise le moment où l’on prend en main les outils pour façonner son destin. De cette puissance créative et mystique, je tire mon essence, chaque lettre étant une sorte de manipulation magique des formes, une incantation typographique qui évoque un univers rempli de secrets et de symboles.
+                  Mais mon essence ne s’arrête pas au Tarot… Les influences des lettres gothiques et des capitales romaines, qui ont marqué les époques médiévales et renaissantes, sont gravées en moi. Les caractères gothiques, avec leurs formes anguleuses et rigides, ont contribué à mon style médiéval, tandis que les lettres romaines m’ont insufflé une grande stabilité et un ancrage classique. Mon appartenance aux Elzévirs, une famille de caractères née au XVIe siècle, renforce cet équilibre entre tradition et modernité..
+                </p>
+              </div>
+            </div>
+            <hr class="info-trait" />
+            
+            <div class="info-div" id="info2">
+              <div onclick="toggleInfo('info2')" class="info-title">
+                <p class="">
+                  Credits & details
+                </p>
+                <div class="rond"></div>
+              </div>
+
+              <div class="info-paragraphe">
+                <!-- <p class="info-big-letter">A</p> -->
+                <p class="">
+                  versatile Grotesque font with the spirit of a display font ●
+                  Complete with 14 weights (7 Uprights, 7 Italics) and a slightly
+                  tighter kerning including Cyrillic support. This typeface was
+                  created to be your next champion font. <br /><br />
+                  This timeless Sans was inspired by what makes Montreal the great
+                  design city it is today, from the Expo 67 to its contemporary
+                  effervescent design scene ▲ It has already been used by many local
+                  brands notably the most recent rebranding of the city's football
+                  club Montreal FC.
+                </p>
+              </div>
+            </div>
+
+            <hr class="info-trait" />
+            <p>Supported languages</p>
+            <hr class="info-trait" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <hr />
+        <div class="style">
+          <div class="sous-titre">
+              <div class="rond"></div>
+              Style
+          </div>
+      
+          <div class="style-flex">
+
+              <div class="size">
+                  <div class="letter-marge">
+                      <h4>Size</h4>
+                      <div class="size-px">
+                          <p id="sizeValue">94</p>
+                          px
+                      </div>
+                  </div>
+      
+                  <input class="slider" type="range" id="sizeSlider" min="10" max="150" value="94">
+              </div>
+
+
+        
+                <!-- Espacement des lettres -->
+                <div class="letter-spacing">
+                  <div class="letter-marge">
+
+                    <h4>Letter Spacing</h4>
+                    <div class="size-px">
+                      <p id="spacingValue">94</p> px
+                  </div>
+                    </div>
+                    <input class="slider" type="range" id="spacingSlider" min="-5" max="20" value="0" step="0.5">
+                </div>
+        
+                <!-- Hauteur de ligne -->
+                <div class="line-height">
+                  <div class="letter-marge">
+
+                    <h4>Line Height</h4>
+                     <div class="size-px">
+                        <p id="lineHeightValue">1.2</p>%
+                    </div>
+                    </div>
+                    <input class="slider" type="range" id="lineHeightSlider" min="0.8" max="3" value="1.2" step="0.1">
+                </div>
+        
+                <!-- Justification du texte -->
+                <div class="justification">
+                    <!-- <h4>Justification</h4> -->
+                    <div class="buttons">
+                        <button class="left" data-align="left"><img src="./svg/left.svg" alt=""></button>
+                        <button data-align="center"><img src="./svg/mid.svg" alt=""></button>
+                        <button data-align="right"><img src="./svg/right.svg" alt=""></button>
+                        <!-- <button data-align="justify">📑</button> -->
+                    </div>
+                </div>
+            </div>
+            <div class="zone-text-interactif" id="editableText" contenteditable="true">
+                Je suis un texte incroyable qui permet de lire la super font Basteleur
+            </div>
+          </div>
+
+      </div>
+      
+
+      
+      <div class="rast">
+          <div class="rast-taille">
+            <img width="100%" src="./Rast.svg" alt="" />
+            <div class="rast-explication">
+              <div>
+                <button class="rast-button" onclick="changeText(1)">1</button>
+                <button class="rast-button" onclick="changeText(2)">2</button>
+                <button class="rast-button" onclick="changeText(3)">3</button>
+                <button class="rast-button" onclick="changeText(4)">4</button>
+              </div>
+              <h3>Geometric counters</h3>
+              <p id="rast-text">
+                The counters (inner forms) are also based on gemometric rules
+                and most counters can be mirrored on at least one axis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+    <div class="character">
+      <div id="lettter-grid" class="lettter-grid">
+        <div id="asciiGrid" class="asciiGrid">
+
+        </div>
+      </div>
+
+
+      <div class="letter-precision">
+        <div id="big-letter" class="big-letter">A</div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
