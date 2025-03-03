@@ -354,76 +354,13 @@ const glyphs = [
     { glyph: '‡', description: 'Double croix de obèle' }
 ];
 
+
 const asciiGrid = document.querySelector(".asciiGrid");
 const bigLetter = document.getElementById("big-letter");
 const letterDesc = document.createElement("p");
 letterDesc.textContent = "Sélectionnez un glyphe pour voir son explication.";
 document.querySelector(".letter-precision").appendChild(letterDesc);
 
-// Fonction pour supprimer la classe "selected" de tous les glyphes
-function clearSelected() {
-    const selectedItems = document.querySelectorAll(".ascii-grid-item.selected");
-    selectedItems.forEach(item => item.classList.remove("selected"));
-}
-
-glyphs.forEach(glyph => {
-    const div = document.createElement("div");
-    const span = document.createElement("span");
-    div.classList.add("ascii-grid-item", "basteleur");
-    span.textContent = glyph.glyph;
-
-    div.onclick = () => {
-        // Supprimer la classe "selected" de tous les glyphes
-        clearSelected();
-
-        // Ajouter la classe "selected" au glyphe cliqué
-        div.classList.add("selected");
-
-        // Mettre à jour le contenu de bigLetter et letterDesc
-        bigLetter.textContent = glyph.glyph;
-        letterDesc.textContent = glyph.description;
-    };
-
-    div.appendChild(span);
-    asciiGrid.appendChild(div);
-});
-// const listAsciiGrid = [
-//     { name: "ASCII", start: 33, end: 126, off: "", id: "ascii" },
-//     { name: "Latin Extended A", start: 0x0100, end: 0x017F, off: "", id: "latin-extended-a" },
-//     // { name: "Latin Extended B", start: 0x0180, end: 0x024F, off: "", id: "latin-extended-b" },
-//     { name: "Greek and Coptic", start: 0x0391, end: 0x03CE, off: "", id: "greek-coptic" },
-//     // { name: "Cyrillic", start: 0x0400, end: 0x04FF, off: "", id: "cyrillic" },
-//     // Ajouter d'autres extensions Unicode si nécessaire
-// ];
-
-// // Sélectionne l'élément où ajouter les caractères
-
-// // Fonction pour générer les caractères à partir des codes Unicode
-// const lettterGrid = document.getElementById("lettter-grid");
-// listAsciiGrid.map((item, index) => {
-//     console.log(index);
-//     const letterExplanation = document.createElement("div"); // Créer une div
-//     lettterGrid.appendChild(letterExplanation); 
-
-//     const title = document.createElement("h5"); // Créer une div
-//     title.classList.add("letter-title"); // Ajouter une classe CSS
-//     title.textContent = item.name; // Ajouter le caractère à la div
-//     letterExplanation.appendChild(title); // Ajouter la div au conteneur
-    
-//     const asciiGrid = document.createElement("div"); // Créer une div
-//     asciiGrid.classList.add("asciiGrid"); // Ajouter une classe CSS
-//     letterExplanation.appendChild(asciiGrid); // Ajouter la div au conteneur
-    
-//     for (let i = item.start; i <= item.end; i++) {  
-//         const char = String.fromCharCode(i); // Convertir le code Unicode en caractère
-//         const div = document.createElement("div"); // Créer une div
-        
-//         div.classList.add("ascii-grid-item"); // Ajouter une classe CSS
-//         div.textContent = char; // Ajouter le caractère à la div
-//         asciiGrid.appendChild(div); // Ajouter la div au conteneur
-//     }
-
-// });
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -494,84 +431,159 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-function toggleInfo(id) {
-    const infoDiv = document.getElementById(id);
-    infoDiv.classList.toggle("open"); // Bascule entre ajouter/retirer la classe "open"
-  }
 
-
-function changeText(buttonNumber) {
-    const textElement = document.getElementById('rast-text');
-    
-    switch(buttonNumber) {
-      case 1:
-        textElement.innerHTML = "The counters (inner forms) are based on gemometric rules and most counters can be mirrored on at least one axis.";
-        break;
-      case 2:
-        textElement.innerHTML = "The shapes of the counters are designed to create a harmonious balance with the rest of the font.";
-        break;
-      case 3:
-        textElement.innerHTML = "Each counter in the font family serves as a key design element to maintain clarity and readability.";
-        break;
-      case 4:
-        textElement.innerHTML = "The geometric nature of the counters adds a modern and clean feel to the typography.";
-        break;
-      default:
-        textElement.innerHTML = "The counters (inner forms) are based on geometric rules and most counters can be mirrored on at least one axis."; // Default text
-    }
-  }
   let lastScrollPosition = 0; // Stocke la dernière position de défilement
 
-  window.addEventListener('scroll', function () {
+
+const basteleurItems = document.querySelectorAll(".basteleur");
+
+const style = document.querySelector(".style");
+const rast = document.querySelector(".rast");
+const character = document.querySelector(".character");
+const img = document.querySelector(".img");
+const info = document.querySelector(".info");
+
+const button = document.getElementById("changeFont");
+const img1 = document.getElementById("img1");
+const img2 = document.getElementById("img2");
+const textCercle = document.querySelector('.text-cercle');
+const texteDefilement = document.querySelector('.text-defilement');
+
+let isBastleurActive = false; // Suivi de l'état actuel
+
+const MoonlightImages = ["./img/MoonAlpahbet.png", "./img/MoonChar.png"];
+const basteleurImages = ["./img/BoldAlpabet.png", "./img/BoldChar.png"];
+function clearSelected() {
+  const selectedItems = document.querySelectorAll(".ascii-grid-item.selected");
+  const selectedListItems = document.querySelectorAll(".ascii-grid-item");
+  selectedItems.forEach(item => item.style.backgroundColor = "rgba(255, 255, 255, 0)" );
+  selectedListItems.forEach(item => item.style.color = isBastleurActive ? "#FFFFFF" : "#FFFFFF");
+  selectedItems.forEach(item => item.classList.remove("selected"));
+}
+
+glyphs.forEach(glyph => {
+  const div = document.createElement("div");
+  const span = document.createElement("p");
+  div.classList.add("ascii-grid-item");
+  span.textContent = glyph.glyph;
+
+  div.onclick = () => {
+      // Supprimer la classe "selected" de tous les glyphes
+      clearSelected();
       const bigLetter = document.getElementById('big-letter');
-      const scrollPosition = window.scrollY; // Position actuelle du défilement
-  
-      // Déterminer la direction du défilement
-      if (scrollPosition > lastScrollPosition) {
-          // Défilement vers le bas : rotation +20 degrés
-          bigLetter.style.transform = 'rotate(12deg)';
-      } else if (scrollPosition < lastScrollPosition) {
-          // Défilement vers le haut : rotation -20 degrés
-          bigLetter.style.transform = 'rotate(-12deg)';
-      }
-  
-      // Revenir à 0 degré après un court délai (par exemple, 200ms)
+
+      // Ajouter la classe "selected" au glyphe cliqué
+      div.classList.add("selected");
+      const selectedItems = document.querySelector(".ascii-grid-item.selected");
+      console.log(selectedItems);
+      selectedItems.style.backgroundColor ="#FFFFFF";
+      selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+
+      bigLetter.style.transform = 'rotate(12deg)';
       setTimeout(() => {
-          bigLetter.style.transform = 'rotate(0deg)';
-      }, 100); // Délai en millisecondes
-  
-      // Mettre à jour la dernière position de défilement
-      lastScrollPosition = scrollPosition;
-  });
+        bigLetter.style.transform = 'rotate(0deg)';
+    }, 400);
+      // Mettre à jour le contenu de bigLetter et letterDesc
+      bigLetter.textContent = glyph.glyph;
+      letterDesc.textContent = glyph.description;
+  };
 
-  document.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY-2000;
+  div.appendChild(span);
+  asciiGrid.appendChild(div);
+}); 
+const buttonBg = document.querySelector(".button-bg");
+const buttonMoonlight = document.querySelector(".button-moonlight");
+const buttonBasteleur = document.querySelector(".button-basteleur");
+button.addEventListener("click", () => {
+  buttonBg.style.transform = isBastleurActive ? "translateX(00%)" : "translateX(100%)";
+  buttonMoonlight.style.color = isBastleurActive ? "#edc000" : "#ffffff";
+  buttonBasteleur.style.color = isBastleurActive ? "#ffffff" : "#07002b";
+  
+  isBastleurActive = !isBastleurActive; // Alterner entre true et false
+  const selectedItems = document.querySelector(".ascii-grid-item.selected");
+
+  // Changer la police des éléments basteleur
+  basteleurItems.forEach(item => {
+    item.style.fontFamily = isBastleurActive ? "Basteleur" : "Basteleur-Bold";
+  });
+  
+  // Alterner les images
+  img1.src = isBastleurActive ? basteleurImages[0] : MoonlightImages[0];
+  img2.src = isBastleurActive ? basteleurImages[1] : MoonlightImages[1];
+  
+  // Changer le texte du bouton
+  
+  // Alterner l'affichage des textes
+  textCercle.style.display = isBastleurActive ? "none" : "block";
+  texteDefilement.style.display = isBastleurActive ? "flex" : "none";
+
+  // Appliquer les styles aux éléments
+  const listChangeColor = [
+    {name:rast, class:".rast", secondaryColor:"#00569D"},
+    {name:character, class:".character",secondaryColor:"#EDC000"},
+    {name:img, class:".img",secondaryColor:"#9C0204"},
+    {name:info, class:".info",secondaryColor:"#00569d"},
+    {name:style, class:".style",secondaryColor:"#EDC000"},
+    ]
+
+  listChangeColor.forEach((item)=> {
+    item.name.style.backgroundColor = isBastleurActive ? "#07002b" : item.secondaryColor;
+    let stylesSelection = document.createElement("style");
     
-    const mooImage = document.querySelector('.moo img');
-    const darImage = document.querySelector('.dar img');
-  
-    // Parallax effect: Moo image moves upwards, Dar image moves downwards
-    mooImage.style.transform = `translateY(${scrollPosition * 0.1}px)`;
-    darImage.style.transform = `translateY(-${scrollPosition * 0.1}px)`;
-  });
+    console.log(item.class);
+    stylesSelection.innerHTML = `
+      ${item.class} p::selection {
+        background-color: ${isBastleurActive ? "#FFFFFF" : "#FFFFFF"}; /* Nouvelle couleur de fond */
+        color: ${isBastleurActive ? "#09002B" :item.secondaryColor}; /* Nouvelle couleur du texte */
+      }
+    `;
+    document.head.appendChild(stylesSelection);
+  })
 
-  const basteleurItems = document.querySelectorAll(".basteleur");
-  const button = document.getElementById("changeFont");
-  let isBastleurActive = false; // Variable pour suivre l'état actuel
-  const textCercle = document.querySelector('.text-cercle');
-  const texteDefilement = document.querySelector('.text-defilement');
+  // Appliquer la couleur du texte aux éléments sélectionnés
+  if (selectedItems) {
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+  }
 
-  button.addEventListener("click", () => {
-    console.log(isBastleurActive);
-    
-    isBastleurActive = !isBastleurActive; // Alterner entre true et false
+  // Appliquer la couleur de la sélection du texte
   
-    basteleurItems.forEach(item => {
-      item.style.fontFamily = isBastleurActive ? "Basteleur" : "Basteleur-Bold"; // Changer entre deux polices
-    });
+});
+
+
+function toggleInfo(id) {
+  const infoDiv = document.getElementById(id);
+  infoDiv.classList.toggle("open"); // Bascule entre ajouter/retirer la classe "open"
+}
+
+const Rastlist = [
+  {
+    style: "Basteleur",
+    img: "./Rast.svg",
+    details: {
+      1: { title: "NumeroBold", paragraphe: "The counters (inner forms) are based on geometric rules and most counters can be mirrored on at least one axis." },
+      2: { title: "FormeBold", paragraphe: "The shapes of the counters are designed to create a harmonious balance with the rest of the font." },
+      3: { title: "UtilisationBold", paragraphe: "Each counter in the font family serves as a key design element to maintain clarity and readability." },
+      4: { title: "Nature géométriqueBold", paragraphe: "The geometric nature of the counters adds a modern and clean feel to the typography." }
+    }
+  }
+];
+
+function changeText(buttonNumber) {
+  // Récupérer les éléments HTML
+  const textElement = document.getElementById('rast-text');
+  const titleElement = document.getElementById('rast-title'); // Ajoute cet élément dans ton HTML si besoin
   
-    // Changer le texte du bouton
-    button.textContent = isBastleurActive ? "Moonlight" : "Basteleur";
-    textCercle.style.display = isBastleurActive ? "none" : "block";
-    texteDefilement.style.display = isBastleurActive ? "flex" : "none";
-  });
+  // Sélectionner le style actif (ici, "Basteleur" par défaut)
+  const selectedStyle = Rastlist.find(item => item.style === "Basteleur");
+
+  // Vérifier si le bouton correspond à une entrée valide
+  if (selectedStyle.details[buttonNumber]) {
+    const { title, paragraphe } = selectedStyle.details[buttonNumber];
+
+    // Mettre à jour le texte
+    if (titleElement) titleElement.innerHTML = title;
+    textElement.innerHTML = paragraphe;
+  } else {
+    textElement.innerHTML = "Invalid selection.";
+  }
+}

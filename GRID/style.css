@@ -1,0 +1,108 @@
+@font-face {
+  font-family: Basteleur-Bold;
+  src: url("../fonts/Basteleur-Bold.otf");
+}
+@font-face {
+  font-family: Basteleur;
+  src: url("../fonts/Basteleur-Moonlight.otf");
+}
+@font-face {
+  font-family: NeuMontreal;
+  src: url("../fonts/NeueMontreal-Regular.otf");
+}
+/* Réinitialisation des styles de base */
+* {
+  font-family: Basteleur;
+
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Évite que le padding augmente la taille des éléments */
+}
+
+.character {
+  background-color: #EDC000;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 40px;
+}
+
+.asciiGrid {
+  height: fit-content;
+  display: grid;
+  grid-template-columns: repeat(6, 0fr);
+  margin-bottom: 80px;
+  font-family: Basteleur-Bold;
+
+}
+
+.ascii-grid-item {
+  /* background-color: blue; */
+  width: 90px;
+  height: 90px;
+  font-size: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.ascii-grid-item:hover {
+  border: solid #fff 2px;
+  transition: 0.1s ease-out;
+}
+.ascii-grid-item.selected {
+  background-color: rgba(255, 255, 255, 0);
+  color: #eceae1;
+}
+
+.ascii-grid-item span {
+  position: relative;
+  top: 8px;
+}
+
+.big-letter {
+  font-family: Basteleur-Bold;
+  background-color: white;
+  color: #EDC000;
+  width: 400px;
+  height: 400px;
+  font-size: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: rotate(0deg); /* Aucune rotation par défaut */
+  transition: transform 0.3s ease; /* Transition fluide */
+}
+
+
+
+.letter-precision {
+  width: 400px;
+  overflow: hidden;
+gap: 24px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  position: sticky;
+  top: 0;
+  align-self: start; /* Permet d'assurer que l'élément respecte le sticky */
+}
+
+.letter-title {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  color: #ffffff50;
+}
+
+.letter-paragphe{
+  width: 400px;
+}

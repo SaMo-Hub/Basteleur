@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Basteleur-Bold;
+  src: url("./fonts/Basteleur-Bold.otf");
+}
+@font-face {
+  font-family: Basteleur;
+  src: url("./fonts/Basteleur-Moonlight.otf");
+}
+body {
+  background: #07002b;
+  overflow: hidden;
+}
+
+.letter-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 50%; /* Prend la moitié de la largeur de la page */
+  height: 100vh;
+  top: 0;
+  overflow: hidden; /* Cacher les lettres une fois qu'elles dépassent */
+}
+
+.letter {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  font-family: Basteleur-Bold;
+}
+

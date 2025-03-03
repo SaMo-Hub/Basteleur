@@ -6,11 +6,25 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.21/dist/lenis.css">
 
-    <title>Background Slider</title>
+    <title>L’accrobate et le magicien</title>
   </head>
-  <body>
-    <h1>Basteleur   </h1>
-      <button id="changeFont" class="button-basteleur">Basteleur</button>
+  <body class="selection">
+    <p class="selection">Sélectionnez-moi pour voir l'effet !</p>
+
+    <!-- <h1>Basteleur   </h1> -->
+      <button id="changeFont" class="button-changeFont">
+        <div class="button-moonlight">
+          <div class="button-container">
+            ☾
+          </div>
+        </div>
+        <div class="button-basteleur">
+        <div class="button-container">
+          &
+        </div>
+        </div>
+        <div class="button-bg"></div>
+      </button>
     <div class="text-cercle">
        <div class="et">&</div>
     <svg class="majuscules" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
@@ -137,6 +151,13 @@
       </svg>
       <div class="bg"></div>
     </div>
+    <div class="text-defilement">
+      <div class="defilement-conteneur">
+        <p>AaBbCcDdEeFfGgHhIiJjKkLlMmOoPpQq</p>
+        <p>AaBbCcDdEeFfGgHhIiJjKkLlMmOoPpQq</p>
+      </div>
+    </div>
+
     <hr />
     <div class="">
       <div class="info">
@@ -149,7 +170,7 @@
 
           <div id="info1" class="info-div">
             <div onclick="toggleInfo('info1')" class="info-title">
-              <p class="">
+              <p class="selection">
                 Histoire et inspirations
               </p>
               <div class="rond"></div>
@@ -177,17 +198,15 @@
 
             <div class="info-paragraphe">
               <!-- <p class="info-big-letter">A</p> -->
-              <p class="">
-                versatile Grotesque font with the spirit of a display font ●
-                Complete with 14 weights (7 Uprights, 7 Italics) and a slightly
-                tighter kerning including Cyrillic support. This typeface was
-                created to be your next champion font. <br /><br />
-                This timeless Sans was inspired by what makes Montreal the great
-                design city it is today, from the Expo 67 to its contemporary
-                effervescent design scene ▲ It has already been used by many local
-                brands notably the most recent rebranding of the city's football
-                club Montreal FC.
-              </p>
+              <div>
+                <div class="lettrine-flex">
+                  <span class="basteleur">A</span>
+                  <p>
+                    pprochez… Je suis Basteleur Moonlight, une typographie qui danse entre l'ombre et la lumière, née de l’intersection de traditions mystiques et de formes typographiques ancestrales.
+                  </p>
+                </div>
+                <p> Si vous vous aventurez dans mon histoire, vous découvrirez que ma véritable inspiration trouve son origine dans les arcanes du Tarot de Marseille, plus particulièrement la carte du Bateleur. Je suis l’œuvre du studio Keussel, studio passionné par l’univers du le‡ttrage artisanal, du dessin de caractères et de la magie graphique. Conçu en 2022, mon design est une fusion entre des influences ésotériques, des références à l’histoire de la typographie et une touche contemporaine qui me rend unique. Le Magicien est un personnage emblématique du Tarot de Marseille, représentant le pouvoir de transformation, la création et l’illusion. La carte symbolise le moment où l’on prend en main les outils pour façonner son destin. De cette puissance créative et mystique, je tire mon essence, chaque lettre étant une sorte de manipulation magique des formes, une incantation typographique qui évoque un univers rempli de secrets et de symboles. Mais mon essence ne s’arrête pas au Tarot… Les influences des lettres gothiques et des capitales romaines, qui ont marqué les époques médiévales et renaissantes, sont gravées en moi. Les caractères gothiques, avec leurs formes anguleuses et rigides, ont contribué à mon style médiéval, tandis que les lettres romaines m’ont insufflé une grande stabilité et un ancrage classique. Mon appartenance aux Elzévirs, une famille de caractères née au XVIe siècle, renforce cet équilibre entre tradition et modernité..</p>
+              </div>
             </div>
           </div>
 
@@ -247,6 +266,17 @@
                   <input class="slider" type="range" id="lineHeightSlider" min="0.8" max="3" value="1.2" step="0.1">
               </div>
       
+              <!-- <div class="line-height">
+                <div class="letter-marge">
+
+                  <h4>Color</h4>
+                   <div class="size-px">
+                      <p id="lineHeightValue">1.2</p>%
+                  </div>
+                  </div>
+                  <input class="" type="color" id="colorChanger" >
+              </div>
+       -->
               <!-- Justification du texte -->
               <div class="justification">
                   <!-- <h4>Justification</h4> -->
@@ -258,53 +288,53 @@
                   </div>
               </div>
           </div>
-          <div class="zone-text-interactif basteleur" id="editableText" contenteditable="true">
+          <P class="zone-text-interactif basteleur" id="editableText" contenteditable="true">
               Je suis un texte incroyable qui permet de lire la super font Basteleur
-          </div>
+          </P>
         </div>
 
     
     <div class="img">
-      <div class="moo">
-        <img src="./img/Moon_Light_2.webp" alt="">
+      <div class="img1">
+        <img id="img1" src="./img/MoonAlpahbet.png" alt="">
       </div>
-      <div class="dar">
-        <img src="./img/DarkKnight.jpg" alt="">
+      <div class="img2">
+        <img id="img2" src="./img/MoonChar.png" alt="">
       </div>
     </div>
     
     
     <div class="rast">
-        <div class="rast-taille">
-          <img width="100%" src="./Rast.svg" alt="" />
-          <div class="rast-explication">
-            <div>
-              <button class="rast-button" onclick="changeText(1)">1</button>
-              <button class="rast-button" onclick="changeText(2)">2</button>
-              <button class="rast-button" onclick="changeText(3)">3</button>
-              <button class="rast-button" onclick="changeText(4)">4</button>
-            </div>
-            <h3>Geometric counters</h3>
-            <p id="rast-text">
-              The counters (inner forms) are also based on gemometric rules
-              and most counters can be mirrored on at least one axis.
-            </p>
+      <div class="rast-taille">
+        <img width="100%" src="./Rast.svg" alt="" />
+        <div class="rast-explication">
+          <div>
+            <button class="rast-button" onclick="changeText(1)"><p>1</p></button>
+            <button class="rast-button" onclick="changeText(2)"><p>2</p></button>
+            <button class="rast-button" onclick="changeText(3)"><p>3</p></button>
+            <button class="rast-button" onclick="changeText(4)"><p>4</p></button>
           </div>
+          <p class="rast-title" id="rast-title">Geometric counters</p> <!-- Ajouté ici -->
+          <p id="rast-text">
+            The counters (inner forms) are also based on geometric rules
+            and most counters can be mirrored on at least one axis.
+          </p>
         </div>
       </div>
     </div>
+    
 
     <div class="character">
-      <div id="lettter-grid" class="lettter-grid">
-        <div class="letter-title">Titre</div>
-        <div id="asciiGrid" class="asciiGrid">
+      <div id="lettter-grid" class="lettter-grid ">
+        <!-- <div class="letter-title">Titre</div> -->
+        <div id="asciiGrid" class="asciiGrid basteleur">
 
         </div>
       </div>
 
 
       <div class="letter-precision">
-        <div id="big-letter" class="basteleur big-letter">A</div>
+        <p id="big-letter" class="basteleur big-letter">A</p>
         <!-- <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
