@@ -81,7 +81,7 @@ hr {
 }
 
 body {
-  background-color: #07002b;
+  background-color: #9C0204;
   color: white;
   padding: 0;
   margin: 0;
@@ -134,10 +134,11 @@ body p::selection {
 .rond {
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.422);
   border-radius: 99999px;
 }
 .sous-titre {
+  color: rgba(255, 255, 255, 0.537);
   display: flex;
   justify-items: center;
   align-items: center;
@@ -249,7 +250,7 @@ body p::selection {
 }
 
 .rast {
-  background: #00569d;
+  background: #EDC000;
   padding: 200px 0;
   display: flex;
   flex-direction: column;
@@ -283,7 +284,7 @@ body p::selection {
 }
 
 .character {
-  background-color: #EDC000;
+  background-color: #9C0204;
   display: flex;
   padding: 0 24px;
   padding-top: 200px;
@@ -360,26 +361,36 @@ body p::selection {
 
 .big-letter {
   font-family: Basteleur-Bold;
-  width: 546px;
-  height: 546px;
-  font-size: 300px;
+  width: 30vw;
+  height: 30vw;
+  font-size: 28vw;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  background-color: #ffffff;
   border-radius: 50%;
+  color: #9C0204;
+
   transform: rotate(0deg); /* Aucune rotation par défaut */
   transition: transform 0.3s ease; /* Transition fluide */
+}
+.big-letter p {
+
+  position: relative;
+  top: -20%;
 }
 
 .letter-precision p {
   margin-top: 24px;
-  width: fit-content;
+}
+.letter p {
+  margin-top: 24px;
+  width: 60%;
 }
 
 .letter-precision {
   overflow: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -387,6 +398,7 @@ body p::selection {
   justify-items: center;
   position: sticky;
   top: 0;
+  padding-bottom: 104px;
   align-self: start; /* Permet d'assurer que l'élément respecte le sticky */
 }
 
@@ -450,6 +462,7 @@ button img {
   height: 16px;
 }
 
+
 .text-cercle {
   font-family: Basteleur-Bold;
   height: 100vh;
@@ -467,14 +480,6 @@ button img {
   font-size: 5vw;
 }
 
-.bg {
-  position: absolute;
-  top: 50%;
-  background-color: #00569d;
-  height: 70%;
-  width: 100%;
-  pointer-events: none;
-}
 
 .majuscules {
   z-index: 20;
@@ -684,12 +689,13 @@ button img {
   padding:200px 24px ;
   display: flex;
   gap: 24px;
-  width: 60%;
+  width: 80%;
   margin-left: auto;
 }
 
 .section-images2 {
-  margin: 24px;
+  padding: 100px 24px;
+  background-color: #00569d;
 }
 
 .section-images2 img {
@@ -701,27 +707,22 @@ button img {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
   width: 100%;
-  gap: 8px;
+  gap: 4px;
 }
 
-.font-history{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  justify-content: space-between;
-  padding: 0 24px;
-  gap: 40px;
 
-}
 
 .font-history {
+  background: #EDC000;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
   justify-content: space-between;
   padding: 0 24px;
+  padding-bottom: 100px;
   gap: 40px;
+  padding-top: 100px;
+
 }
 
 .font-etoile{
@@ -733,7 +734,6 @@ button img {
   margin-top: 200px;
 }
 .footer-title{
-  font-size: 20px;
   color: #ffffff54;
   width: max-content;
   margin-bottom: 8px;
@@ -743,6 +743,10 @@ button img {
   position: relative;
   top: -5px;
   margin-bottom: 16px;
+}
+
+.license{
+  width: 60%;
 }
 
 .footer-flex{
@@ -802,4 +806,53 @@ button img {
 .footer-firstLine h3{
   position: relative;
   top: 25px;
+}
+
+#retour {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	display: grid;
+	place-items: center;
+	background: rgb(226, 193, 249);
+	background: radial-gradient(
+		circle,
+		rgba(226, 193, 249, 1) 0%,
+		rgba(240, 255, 250, 1) 25%,
+		rgba(251, 255, 228, 1) 50%,
+		rgba(254, 218, 251, 1) 75%,
+		rgba(226, 193, 249, 1) 100%
+	);
+	position: absolute;
+  z-index: 50;
+}
+
+#retour a {
+	/*placer le nom de votre font*/
+	font-size: 18px;
+	text-decoration: none;
+	color: #f34b40;
+}
+.text_explication-container{
+  background: #00569d;
+}
+
+
+
+.visuels {
+  padding: 100px 24px;
+  background-color: #00569d;
+}
+
+.visuels img {
+  width: 100%;
+  height: 100%;
+}
+
+.visuels-grid{
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  width: 100%;
+  gap: 4px;
 }

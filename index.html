@@ -8,8 +8,10 @@
 
     <title>L’accrobate et le magicien</title>
   </head>
-  <body class="selection">
-
+  <body id="body" class="body selection">
+    <div id="retour">
+      <a href="https://nicolastilly.github.io/typodriven1web/">retour</a>
+    </div>
     <!-- <h1>Basteleur   </h1> -->
       <button id="changeFont" class="button-changeFont">
         <div class="button-moonlight">
@@ -25,6 +27,7 @@
         <div class="button-bg"></div>
       </button>
     <div class="text-cercle">
+      
        <div class="et">&</div>
     <svg class="majuscules" xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
         <title>Circular Text Path</title>
@@ -159,7 +162,7 @@
 
     <hr />
       <div class="info">
-        <div class="sous-titre">
+        <div class="sous-titre basteleur">
           <div class="rond"></div>
           info
         </div>
@@ -169,7 +172,7 @@
           <div id="info1" class="info-div">
             <div onclick="toggleInfo('info1')" class="info-title">
               <p class="selection">
-                Histoire et inspirations
+                Inspirations
               </p>
               <div class="rond"></div>
             </div>
@@ -189,7 +192,29 @@
           <div class="info-div" id="info2">
             <div onclick="toggleInfo('info2')" class="info-title">
               <p class="">
-                Credits & details
+                Carateristiques
+              </p>
+              <div class="rond"></div>
+            </div>
+
+            <div class="info-paragraphe">
+              <!-- <p class="info-big-letter">A</p> -->
+              <div>
+                <div class="lettrine-flex">
+                  <span class="basteleur">A</span>
+                  <p>
+                    pprochez… Je suis Basteleur Moonlight, une typographie qui danse entre l'ombre et la lumière, née de l’intersection de traditions mystiques et de formes typographiques ancestrales.
+                  </p>
+                </div>
+                <p> Si vous vous aventurez dans mon histoire, vous découvrirez que ma véritable inspiration trouve son origine dans les arcanes du Tarot de Marseille, plus particulièrement la carte du Bateleur. Je suis l’œuvre du studio Keussel, studio passionné par l’univers du le‡ttrage artisanal, du dessin de caractères et de la magie graphique. Conçu en 2022, mon design est une fusion entre des influences ésotériques, des références à l’histoire de la typographie et une touche contemporaine qui me rend unique. Le Magicien est un personnage emblématique du Tarot de Marseille, représentant le pouvoir de transformation, la création et l’illusion. La carte symbolise le moment où l’on prend en main les outils pour façonner son destin. De cette puissance créative et mystique, je tire mon essence, chaque lettre étant une sorte de manipulation magique des formes, une incantation typographique qui évoque un univers rempli de secrets et de symboles. Mais mon essence ne s’arrête pas au Tarot… Les influences des lettres gothiques et des capitales romaines, qui ont marqué les époques médiévales et renaissantes, sont gravées en moi. Les caractères gothiques, avec leurs formes anguleuses et rigides, ont contribué à mon style médiéval, tandis que les lettres romaines m’ont insufflé une grande stabilité et un ancrage classique. Mon appartenance aux Elzévirs, une famille de caractères née au XVIe siècle, renforce cet équilibre entre tradition et modernité..</p>
+              </div>
+            </div>
+          </div>
+          <hr class="info-trait" />
+          <div class="info-div" id="info3">
+            <div onclick="toggleInfo('info3')" class="info-title">
+              <p class="">
+                Usages 
               </p>
               <div class="rond"></div>
             </div>
@@ -209,8 +234,6 @@
           </div>
 
           <hr class="info-trait" />
-          <p>Supported languages</p>
-          <hr class="info-trait" />
         </div>
    
     </div>
@@ -219,19 +242,19 @@
       <hr />
 
       <div class="style">
-        <div class="sous-titre">
-            <div class="rond"></div>
-            Style
+        <div class="sous-titre basteleur">
+          <div class="rond"></div>
+          style
         </div>
     
         <div class="style-flex">
 
             <div class="size">
                 <div class="letter-marge">
-                    <h4>Size</h4>
+                    <p>Size</p>
                     <div class="size-px">
                         <p id="sizeValue">94</p>
-                        px
+                        <p>px</p>
                     </div>
                 </div>
     
@@ -244,9 +267,11 @@
               <div class="letter-spacing">
                 <div class="letter-marge">
 
-                  <h4>Letter Spacing</h4>
+                  <p>Letter Spacing</p>
                   <div class="size-px">
-                    <p id="spacingValue">94</p> px
+                    <p id="spacingValue">94</p>
+                    <p>px</p>
+
                 </div>
                   </div>
                   <input class="slider" type="range" id="spacingSlider" min="-5" max="20" value="0" step="0.5">
@@ -256,9 +281,9 @@
               <div class="line-height">
                 <div class="letter-marge">
 
-                  <h4>Line Height</h4>
+                  <p>Line Height</p>
                    <div class="size-px">
-                      <p id="lineHeightValue">1.2</p>%
+                      <p id="lineHeightValue">1.2</p>                        <p>%</p>
                   </div>
                   </div>
                   <input class="slider" type="range" id="lineHeightSlider" min="0.8" max="3" value="1.2" step="0.1">
@@ -294,23 +319,28 @@
     
     <div class="img">
       <div class="img1">
-        <img id="img1" src="./img/MoonAlpahbet.png" alt="">
+        <img id="img1" src="./img/Basteleur/img1.png" alt="">
       </div>
       <div class="img2">
-        <img id="img2" src="./img/MoonChar.png" alt="">
+        <img id="img2" src="./img/Basteleur/img2.png" alt="">
       </div>
     </div>
-    
-    <div class="text_explication">
-      <p>
-        Founded in 1642 as Ville-Marie, or 'City of Mary', it is named after Mount Royal, the triple-peaked hill in the heart of the city. The city is centred on the Island of Montreal, which got its name from the same origin as the city, and a few much smaller peripheral islands, the largest of which is Île Bizard. The city is situated 196 km (122 mi) east of the national capital Ottawa, and 258 km (160 mi) south-west of the provincial capital, Quebec City. In 2016, the city had a population of 1,704,694, with a population of 1,942,247 in the urban agglomeration, including all of the other municipalities on the Island of Montreal. The broader metropolitan area had a population of 4,098,247. French is the city's official language
-      </p>
-      <p>
-        Founded in 1642 as Ville-Marie, or 'City of Mary', it is named after Mount Royal, the triple-peaked hill in the heart of the city. The city is centred on the Island of Montreal, which got its name from the same origin as the city, and a few much smaller peripheral islands, the largest of which is Île Bizard. The city is situated 196 km (122 mi) east of the national capital Ottawa, and 258 km (160 mi) south-west of the provincial capital, Quebec City. In 2016, the city had a population of 1,704,694, with a population of 1,942,247 in the urban agglomeration, including all of the other municipalities on the Island of Montreal. The broader metropolitan area had a population of 4,098,247. French is the city's official language
-      </p>
-      <p>
-        Founded in 1642 as Ville-Marie, or 'City of Mary', it is named after Mount Royal, the triple-peaked hill in the heart of the city. The city is centred on the Island of Montreal, which got its name from the same origin as the city, and a few much smaller peripheral islands, the largest of which is Île Bizard. The city is situated 196 km (122 mi) east of the national capital Ottawa, and 258 km (160 mi) south-west of the provincial capital, Quebec City. In 2016, the city had a population of 1,704,694, with a population of 1,942,247 in the urban agglomeration, including all of the other municipalities on the Island of Montreal. The broader metropolitan area had a population of 4,098,247. French is the city's official language
-      </p>
+    <div class="text_explication-container">
+      <div class="sous-titre basteleur">
+        <div class="rond"></div>
+             Histoire de la font
+      </div>
+      <div class="text_explication">
+        <p id="text_explication1">
+          Approchez… Je suis Basteleur Moonlight, une typographie oscillant entre ombre et lumière, inspirée du Tarot de Marseille et plus particulièrement du Bateleur. Créée en 2022 par le studio Keussel, je suis le fruit d’un mariage entre influences ésotériques, traditions typographiques et modernité.   
+        </p>     
+        <p id="text_explication2">
+          Le Magicien, figure du Tarot, incarne la transformation et la création. De cette essence mystique, chaque lettre devient une incantation graphique, un jeu subtil entre formes et symboles, évoquant un univers empli de secrets.
+        </p>
+        <p id="text_explication3">
+          Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau.       
+         </p>
+        </div>
     </div>
     <hr />
 
@@ -336,43 +366,73 @@
     
     
     <div class="character">
-      <div id="lettter-grid" class="lettter-grid ">
-        <div id="asciiGrid" class="asciiGrid basteleur">
-          
+      <div class="sous-titre basteleur">
+        <div class="rond"></div>
+        Librarie de glyphes
+      </div>
+      <div class="character-flex">
+        <div id="lettter-grid" class="lettter-grid ">
+          <div id="asciiGrid" class="asciiGrid basteleur">
+            
+          </div>
         </div>
+        <div class="letter-precision">
+          <p id="big-letter" class="basteleur big-letter">A</p>
+          
+      </div>
       </div>
       
       
-      <div class="letter-precision">
-        <p id="big-letter" class="basteleur big-letter">A</p>
-        
-    </div>
   </div>
   
   <div class="section-images2">
-    <img src="./img/Basteleur/img3.png" alt="">
+    <!-- <div class="sous-titre basteleur">
+      <div class="rond"></div>
+      Typography en Utilisation
+    </div> -->
+    <img id="img3" src="./img/Basteleur/img3.png" alt="">
     <div class="section-images2-flex">
-      <img src="./img/Basteleur/img4.png" alt="">
-      <img src="./img/Basteleur/img5.png" alt="">
+      <img id="img4" src="./img/Basteleur/img5.png" alt="">
+      <img id="img5" src="./img/Basteleur/img4.png" alt="">
     </div>
   </div>
   <hr />
 
   <div class="font-history">
-
+    <div class="sous-titre basteleur">
+      <div class="rond"></div>
+      Typography en Utilisation
+    </div>
+     <div class="font-histor-contanier"></div>
    
+  </div>
+
+  <div class="visuels">
+    <!-- <div class="sous-titre basteleur">
+      <div class="rond"></div>
+      Typography en Utilisation
+    </div> -->
+
+ 
+    <div class="visuels-grid">
+      <img src="./img/Basteleur/visuel1.jpg" alt="">
+      <img src="./img/Basteleur/visuel2.png" alt="">
+      <img src="./img/Basteleur/visuel3.png" alt="">
+      <img src="./img/Basteleur/visuel4.jpg" alt="">
+    </div>
   </div>
 
   <footer class="footer">
     <div class="footer-firstLine">
       <div>
-        <a href=""><img src="./img/Github.svg" alt=""></a>
+        <a target="_blank" href="https://github.com/SaMo-Hub/Basteleur"><img src="./img/Github.svg" alt=""></a>
         <a href=""><img src="./img/Velvetyne.svg" alt=""></a>
       </div>
       <h3 class="footer-BigText basteleur">Basteleur</h3>
     </div>
 
     <hr>
+
 
   <div class="footer-flex">
     <div>
@@ -397,7 +457,7 @@
     </div>
     <div>
       <p class="footer-title basteleur">License</p>
-      <p class="footer-paragraphe">Open Font License (Free for personal and commercial use)</p>
+      <p class="footer-paragraphe license">Open Font License (Free for personal and commercial use)</p>
     </div>
   </div>
      <div class="footer-lastline">
@@ -410,7 +470,9 @@
           <button class="button-secondary">
             <p>
               Donwload specimen
-            </p>          </button>
+            </p>  
+            <div class="bg-button"></div>
+          </button>
           <button class="button-primary">
             <p>
               Donwload font

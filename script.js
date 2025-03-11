@@ -5,7 +5,11 @@ const lenis = new Lenis({
 // Listen for the scroll event and log the event data
 
 const glyphs = [
-  { glyph: "A", description: "Lettre majuscule latine A" },
+  {
+    glyph: "A",
+    description:
+      "Une panse occupant trois quarts de la hauteur , créant une structure équilibrée et lisible. La courbe est fluide et harmonieuse, idéale pour la continuité du texte.",
+  },
   { glyph: "Á", description: "Lettre majuscule latine A avec accent aigu" },
   { glyph: "Ă", description: "Lettre majuscule latine A avec brève" },
   { glyph: "Ǎ", description: "Lettre majuscule latine A avec caron" },
@@ -438,34 +442,33 @@ const glyphs = [
 const fontHistoryList = [
   {
     title: "Gothique script",
-    class:'gothique',
+    class: "gothique",
     img: "./img/Lettrine/Onciale.svg",
     paragraphe:
       "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "Gothique script",
-    class:'gothique',
+    class: "gothique",
     img: "./img/Lettrine/Irlandaise.svg",
     paragraphe:
       "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "Gothique script",
-    class:'gothique',
+    class: "gothique",
     img: "./img/Lettrine/Basteleur-Bold.svg",
     paragraphe:
       "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
   {
     title: "Gothique ",
-    class:'gothique',
+    class: "gothique",
     img: "./img/Lettrine/gothique.svg",
     paragraphe:
       "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   },
 ];
-
 
 const asciiGrid = document.querySelector(".asciiGrid");
 const bigLetter = document.getElementById("big-letter");
@@ -518,7 +521,7 @@ fontHistoryList.forEach((font) => {
   const etoile = document.createElement("p");
   const title = document.createElement("p");
   const paragraphe = document.createElement("p");
-  
+
   div.appendChild(divText);
   etoile.classList.add("font-etoile");
   title.classList.add("font-etoile-title");
