@@ -5,439 +5,1044 @@ const lenis = new Lenis({
 // Listen for the scroll event and log the event data
 
 const glyphs = [
+  // ... (les glyphes précédents sont déjà inclus ci-dessus)
   {
-    glyph: "A",
+    glyph: "Á",
     description:
-      "Une panse occupant trois quarts de la hauteur , créant une structure équilibrée et lisible. La courbe est fluide et harmonieuse, idéale pour la continuité du texte.",
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
   },
-  { glyph: "Á", description: "Lettre majuscule latine A avec accent aigu" },
-  { glyph: "Ă", description: "Lettre majuscule latine A avec brève" },
-  { glyph: "Ǎ", description: "Lettre majuscule latine A avec caron" },
+  {
+    glyph: "À",
+    description:
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "Â",
-    description: "Lettre majuscule latine A avec accent circonflexe",
+    description:
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "Ä", description: "Lettre majuscule latine A avec tréma" },
-  { glyph: "À", description: "Lettre majuscule latine A avec accent grave" },
-  { glyph: "Ā", description: "Lettre majuscule latine A avec macron" },
-  { glyph: "Ą", description: "Lettre majuscule latine A avec ogonek" },
-  { glyph: "Å", description: "Lettre majuscule latine A avec anneau" },
-  { glyph: "Ã", description: "Lettre majuscule latine A avec tilde" },
-  { glyph: "Æ", description: "Ligature latine majuscule AE" },
-  { glyph: "B", description: "Lettre majuscule latine B" },
-  { glyph: "C", description: "Lettre majuscule latine C" },
-  { glyph: "Ć", description: "Lettre majuscule latine C avec accent aigu" },
-  { glyph: "Č", description: "Lettre majuscule latine C avec caron" },
-  { glyph: "Ç", description: "Lettre majuscule latine C avec cédille" },
-  { glyph: "Ċ", description: "Lettre majuscule latine C avec point en chef" },
-  { glyph: "D", description: "Lettre majuscule latine D" },
-  { glyph: "Ð", description: "Lettre majuscule latine Eth" },
-  { glyph: "Ď", description: "Lettre majuscule latine D avec caron" },
-  { glyph: "Đ", description: "Lettre majuscule latine D barré" },
-  { glyph: "E", description: "Lettre majuscule latine E" },
-  { glyph: "É", description: "Lettre majuscule latine E avec accent aigu" },
-  { glyph: "Ě", description: "Lettre majuscule latine E avec caron" },
+  {
+    glyph: "Ä",
+    description:
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, ornée d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "Å",
+    description:
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, surmontée d'un anneau qui lui confère une identité unique.",
+  },
+  {
+    glyph: "Ã",
+    description:
+      "Une structure équilibrée avec une panse occupant trois quarts de l'espace, accompagnée d'un tilde qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "Æ",
+    description:
+      "Une ligature majestueuse combinant les formes de A et E, avec une panse oblique qui crée une harmonie visuelle.",
+  },
+  {
+    glyph: "B",
+    description:
+      "Un hampe vertical robuste, accompagné d'une panse oblique comprenant deux niveaux de la lettre. Des empattements triangulaires marquent la base et le sommet, renforçant son ancrage visuel.",
+  },
+  {
+    glyph: "C",
+    description:
+      "Une ouverture marquée, soulignée par un empattement triangulaire en haut. Sa base légèrement incurvée rappelle un croissant de lune, ajoutant une dynamique subtile à sa forme.",
+  },
+  {
+    glyph: "Ç",
+    description:
+      "Une ouverture marquée, soulignée par un empattement triangulaire en haut, accompagnée d'une cédille qui ajoute une touche distinctive.",
+  },
+  {
+    glyph: "D",
+    description:
+      "Un hampe droit et stable, associé à une panse occupant deux niveaux de la hauteur. Un empattement triangulaire accentue la structure, lui donnant une assise visuelle marquée.",
+  },
+  {
+    glyph: "Ð",
+    description:
+      "Un hampe droit et stable, associé à une panse occupant deux niveaux de la hauteur, avec une barre transversale qui renforce sa présence.",
+  },
+  {
+    glyph: "E",
+    description:
+      "Un œil occupant un tiers de l'espace intérieur, favorisant un bon équilibre. L'empattement supérieur triangulaire renforce sa stabilité tout en ajoutant un caractère distinctif.",
+  },
+  {
+    glyph: "É",
+    description:
+      "Un œil occupant un tiers de l'espace intérieur, surmonté d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "È",
+    description:
+      "Un œil occupant un tiers de l'espace intérieur, accompagné d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "Ê",
-    description: "Lettre majuscule latine E avec accent circonflexe",
+    description:
+      "Un œil occupant un tiers de l'espace intérieur, marqué par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "Ë", description: "Lettre majuscule latine E avec tréma" },
-  { glyph: "Ė", description: "Lettre majuscule latine E avec point en chef" },
-  { glyph: "È", description: "Lettre majuscule latine E avec accent grave" },
-  { glyph: "Ē", description: "Lettre majuscule latine E avec macron" },
-  { glyph: "Ę", description: "Lettre majuscule latine E avec ogonek" },
-  { glyph: "F", description: "Lettre majuscule latine F" },
-  { glyph: "G", description: "Lettre majuscule latine G" },
-  { glyph: "Ğ", description: "Lettre majuscule latine G avec brève" },
-  { glyph: "Ģ", description: "Lettre majuscule latine G avec cédille" },
-  { glyph: "Ġ", description: "Lettre majuscule latine G avec point en chef" },
-  { glyph: "H", description: "Lettre majuscule latine H" },
-  { glyph: "Ħ", description: "Lettre majuscule latine H barré" },
-  { glyph: "I", description: "Lettre majuscule latine I" },
-  { glyph: "Í", description: "Lettre majuscule latine I avec accent aigu" },
-  { glyph: "Ǐ", description: "Lettre majuscule latine I avec caron" },
+  {
+    glyph: "Ë",
+    description:
+      "Un œil occupant un tiers de l'espace intérieur, orné d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "F",
+    description:
+      "Un hampe vertical avec un empattement triangulaire en bas et une barre supérieure légèrement irrégulière, apportant un contraste subtil entre rigueur et fluidité.",
+  },
+  {
+    glyph: "G",
+    description:
+      "Une panse oblique marquée et un jambage descendant, apportant une dynamique unique. L'ouverture est légèrement inclinée, influençant le mouvement perçu de la lettre.",
+  },
+  {
+    glyph: "Ğ",
+    description:
+      "Une panse oblique marquée et un jambage descendant, accompagnée d'un brève qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "H",
+    description:
+      "Deux hampes solides, accompagnés de quatre empattements triangulaires, assurant un bon ancrage visuel. La traverse centrale, plus fine, établit un contraste entre épaisseur et légèreté.",
+  },
+  {
+    glyph: "I",
+    description:
+      "Un hampe droit et simple, terminé par un empattement triangulaire sur la base, offrant une présence discrète mais affirmée.",
+  },
+  {
+    glyph: "Í",
+    description:
+      "Un hampe droit et simple, surmonté d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "Ì",
+    description:
+      "Un hampe droit et simple, accompagné d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "Î",
-    description: "Lettre majuscule latine I avec accent circonflexe",
+    description:
+      "Un hampe droit et simple, marqué par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "Ï", description: "Lettre majuscule latine I avec tréma" },
-  { glyph: "İ", description: "Lettre majuscule latine I avec point en chef" },
-  { glyph: "Ì", description: "Lettre majuscule latine I avec accent grave" },
-  { glyph: "Ī", description: "Lettre majuscule latine I avec macron" },
-  { glyph: "Į", description: "Lettre majuscule latine I avec ogonek" },
-  { glyph: "J", description: "Lettre majuscule latine J" },
-  { glyph: "K", description: "Lettre majuscule latine K" },
-  { glyph: "Ķ", description: "Lettre majuscule latine K avec cédille" },
-  { glyph: "L", description: "Lettre majuscule latine L" },
-  { glyph: "Ĺ", description: "Lettre majuscule latine L avec accent aigu" },
-  { glyph: "Ľ", description: "Lettre majuscule latine L avec caron" },
-  { glyph: "Ļ", description: "Lettre majuscule latine L avec cédille" },
-  { glyph: "Ł", description: "Lettre majuscule latine L barré" },
-  { glyph: "M", description: "Lettre majuscule latine M" },
-  { glyph: "N", description: "Lettre majuscule latine N" },
-  { glyph: "Ń", description: "Lettre majuscule latine N avec accent aigu" },
-  { glyph: "Ň", description: "Lettre majuscule latine N avec caron" },
-  { glyph: "Ņ", description: "Lettre majuscule latine N avec cédille" },
-  { glyph: "Ŋ", description: "Lettre majuscule latine Eng" },
-  { glyph: "Ñ", description: "Lettre majuscule latine N avec tilde" },
-  { glyph: "O", description: "Lettre majuscule latine O" },
-  { glyph: "Ó", description: "Lettre majuscule latine O avec accent aigu" },
-  { glyph: "Ǒ", description: "Lettre majuscule latine O avec caron" },
+  {
+    glyph: "Ï",
+    description:
+      "Un hampe droit et simple, orné d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "J",
+    description:
+      "Un hampe droit prolongé d'un jambage courbé, équilibré par un empattement triangulaire en haut. La courbure adoucit l'aspect géométrique de la lettre.",
+  },
+  {
+    glyph: "K",
+    description:
+      "Un hampe droit avec deux empattements triangulaires et une diagonale montante fine, créant un contraste entre les traits verticaux et inclinés.",
+  },
+  {
+    glyph: "L",
+    description:
+      "Un hampe droit avec deux empattements triangulaires. La barre inférieure fine ajoute une asymétrie qui allège la structure globale de la lettre.",
+  },
+  {
+    glyph: "Ł",
+    description:
+      "Un hampe droit avec deux empattements triangulaires, accompagné d'une barre oblique qui ajoute une dynamique unique.",
+  },
+  {
+    glyph: "M",
+    description:
+      "Un jeu de diagonales inégales et d'empattements triangulaires, offrant une combinaison entre solidité et mouvement. L'irrégularité en haut du 'M' ajoute une variation visuelle.",
+  },
+  {
+    glyph: "N",
+    description:
+      "Un hampe fin accompagné d'une diagonale plus épaisse, créant un contraste entre les différentes parties de la lettre. Deux empattements triangulaires assurent sa stabilité.",
+  },
+  {
+    glyph: "Ñ",
+    description:
+      "Un hampe fin accompagné d'une diagonale plus épaisse, surmontée d'un tilde qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "O",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, apportant une structure dynamique et fluide à la lettre.",
+  },
+  {
+    glyph: "Ó",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "Ò",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "Ô",
-    description: "Lettre majuscule latine O avec accent circonflexe",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "Ö", description: "Lettre majuscule latine O avec tréma" },
-  { glyph: "Ò", description: "Lettre majuscule latine O avec accent grave" },
   {
-    glyph: "Ő",
-    description: "Lettre majuscule latine O avec double accent aigu",
+    glyph: "Ö",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, ornée d'un tréma qui apporte une touche de distinction.",
   },
-  { glyph: "Ō", description: "Lettre majuscule latine O avec macron" },
-  { glyph: "Ø", description: "Lettre majuscule latine O barré" },
-  { glyph: "Õ", description: "Lettre majuscule latine O avec tilde" },
-  { glyph: "Œ", description: "Ligature latine majuscule OE" },
-  { glyph: "P", description: "Lettre majuscule latine P" },
-  { glyph: "Þ", description: "Lettre majuscule latine Thorn" },
-  { glyph: "Q", description: "Lettre majuscule latine Q" },
-  { glyph: "R", description: "Lettre majuscule latine R" },
-  { glyph: "Ŕ", description: "Lettre majuscule latine R avec accent aigu" },
-  { glyph: "Ř", description: "Lettre majuscule latine R avec caron" },
-  { glyph: "Ŗ", description: "Lettre majuscule latine R avec cédille" },
-  { glyph: "S", description: "Lettre majuscule latine S" },
-  { glyph: "Ś", description: "Lettre majuscule latine S avec accent aigu" },
-  { glyph: "Š", description: "Lettre majuscule latine S avec caron" },
-  { glyph: "Ş", description: "Lettre majuscule latine S avec cédille" },
   {
-    glyph: "Ș",
-    description: "Lettre majuscule latine S avec virgule souscrite",
+    glyph: "Ø",
+    description:
+      "Une panse oblique qui évoque deux croissants de lune superposés, traversée par une barre oblique qui ajoute une dynamique unique.",
   },
-  { glyph: "T", description: "Lettre majuscule latine T" },
-  { glyph: "Ŧ", description: "Lettre majuscule latine T barré" },
-  { glyph: "Ť", description: "Lettre majuscule latine T avec caron" },
-  { glyph: "Ţ", description: "Lettre majuscule latine T avec cédille" },
   {
-    glyph: "Ț",
-    description: "Lettre majuscule latine T avec virgule souscrite",
+    glyph: "Œ",
+    description:
+      "Une ligature majestueuse combinant les formes de O et E, avec une panse oblique qui crée une harmonie visuelle.",
   },
-  { glyph: "U", description: "Lettre majuscule latine U" },
-  { glyph: "Ú", description: "Lettre majuscule latine U avec accent aigu" },
-  { glyph: "Ǔ", description: "Lettre majuscule latine U avec caron" },
+  {
+    glyph: "P",
+    description:
+      "Un hampe droit avec un empattement triangulaire, accompagné d'une panse oblique et d'un œil couvrant la moitié de l'espace intérieur, créant un équilibre harmonieux.",
+  },
+  {
+    glyph: "Q",
+    description:
+      "Similaire au 'O', avec une petite vague fine à la base, apportant un mouvement supplémentaire qui allège la lettre.",
+  },
+  {
+    glyph: "R",
+    description:
+      "Un hampe droit avec un empattement triangulaire, une panse oblique similaire à celle du B et du P, et une diagonale fine qui contraste avec la structure principale.",
+  },
+  {
+    glyph: "S",
+    description:
+      "Une courbe fluide, accentuée par des empattements triangulaires aux extrémités, créant un effet de mouvement maîtrisé.",
+  },
+  {
+    glyph: "Š",
+    description:
+      "Une courbe fluide, accentuée par des empattements triangulaires aux extrémités, surmontée d'un caron qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "T",
+    description:
+      "Une hampe droite surmontée d'une barre horizontale irrégulière, renforcée par des empattements triangulaires qui rappellent le style Elzévir.",
+  },
+  {
+    glyph: "U",
+    description:
+      "Une structure équilibrée avec deux hampes asymétriques, la première étant légèrement plus large, renforçant la perception de profondeur.",
+  },
+  {
+    glyph: "Ú",
+    description:
+      "Une structure équilibrée avec deux hampes asymétriques, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "Ù",
+    description:
+      "Une structure équilibrée avec deux hampes asymétriques, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "Û",
-    description: "Lettre majuscule latine U avec accent circonflexe",
+    description:
+      "Une structure équilibrée avec deux hampes asymétriques, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "Ü", description: "Lettre majuscule latine U avec tréma" },
   {
-    glyph: "Ǘ",
-    description: "Lettre majuscule latine U avec tréma et accent aigu",
+    glyph: "Ü",
+    description:
+      "Une structure équilibrée avec deux hampes asymétriques, ornée d'un tréma qui apporte une touche de distinction.",
   },
-  { glyph: "Ǚ", description: "Lettre majuscule latine U avec tréma et caron" },
   {
-    glyph: "Ǜ",
-    description: "Lettre majuscule latine U avec tréma et accent grave",
+    glyph: "V",
+    description:
+      "Une première diagonale plus épaisse que la seconde, marquée par des empattements triangulaires aux extrémités, conférant une certaine assise.",
   },
-  { glyph: "Ǖ", description: "Lettre majuscule latine U avec tréma et macron" },
-  { glyph: "Ù", description: "Lettre majuscule latine U avec accent grave" },
   {
-    glyph: "Ű",
-    description: "Lettre majuscule latine U avec double accent aigu",
+    glyph: "W",
+    description:
+      "Une alternance de diagonales aux épaisseurs contrastées, où la première et la troisième diagonales sont plus larges, accentuant le rythme visuel de la lettre.",
   },
-  { glyph: "Ū", description: "Lettre majuscule latine U avec macron" },
-  { glyph: "Ų", description: "Lettre majuscule latine U avec ogonek" },
-  { glyph: "Ů", description: "Lettre majuscule latine U avec anneau" },
-  { glyph: "V", description: "Lettre majuscule latine V" },
-  { glyph: "W", description: "Lettre majuscule latine W" },
-  { glyph: "Ẃ", description: "Lettre majuscule latine W avec accent aigu" },
   {
-    glyph: "Ŵ",
-    description: "Lettre majuscule latine W avec accent circonflexe",
+    glyph: "X",
+    description:
+      "Deux diagonales croisées, avec des empattements triangulaires en haut et en bas. La diagonale gauche est plus épaisse, créant un effet d'ancrage.",
   },
-  { glyph: "Ẅ", description: "Lettre majuscule latine W avec tréma" },
-  { glyph: "Ẁ", description: "Lettre majuscule latine W avec accent grave" },
-  { glyph: "X", description: "Lettre majuscule latine X" },
-  { glyph: "Y", description: "Lettre majuscule latine Y" },
-  { glyph: "Ý", description: "Lettre majuscule latine Y avec accent aigu" },
   {
-    glyph: "Ŷ",
-    description: "Lettre majuscule latine Y avec accent circonflexe",
+    glyph: "Y",
+    description:
+      "Une diagonale gauche et la base plus épaisses, contrastant avec la diagonale droite plus fine. Des empattements triangulaires discrets assurent un bon équilibre visuel.",
   },
-  { glyph: "Ÿ", description: "Lettre majuscule latine Y avec tréma" },
-  { glyph: "Ỳ", description: "Lettre majuscule latine Y avec accent grave" },
-  { glyph: "Z", description: "Lettre majuscule latine Z" },
-  { glyph: "Ź", description: "Lettre majuscule latine Z avec accent aigu" },
-  { glyph: "Ž", description: "Lettre majuscule latine Z avec caron" },
-  { glyph: "Ż", description: "Lettre majuscule latine Z avec point en chef" },
-  { glyph: "a", description: "Lettre minuscule latine a" },
-  { glyph: "á", description: "Lettre minuscule latine a avec accent aigu" },
-  { glyph: "ă", description: "Lettre minuscule latine a avec brève" },
-  { glyph: "ǎ", description: "Lettre minuscule latine a avec caron" },
+  {
+    glyph: "Ý",
+    description:
+      "Une diagonale gauche et la base plus épaisses, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "Z",
+    description:
+      "Une diagonale plus épaisse que les autres tracés, accompagnée d'irrégularités triangulaires à ses extrémités, évoquant la structure des Elzévirs.",
+  },
+  {
+    glyph: "Ž",
+    description:
+      "Une diagonale plus épaisse que les autres tracés, surmontée d'un caron qui ajoute une élégance visuelle.",
+  },
+
+  // Lettres minuscules de base
+  {
+    glyph: "a",
+    description:
+      "Une panse occupant trois quarts de la hauteur, créant une structure équilibrée et lisible. La courbe est fluide et harmonieuse, idéale pour la continuité du texte.",
+  },
+  {
+    glyph: "á",
+    description:
+      "Une panse occupant trois quarts de la hauteur, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "à",
+    description:
+      "Une panse occupant trois quarts de la hauteur, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "â",
-    description: "Lettre minuscule latine a avec accent circonflexe",
+    description:
+      "Une panse occupant trois quarts de la hauteur, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "ä", description: "Lettre minuscule latine a avec tréma" },
-  { glyph: "à", description: "Lettre minuscule latine a avec accent grave" },
-  { glyph: "ā", description: "Lettre minuscule latine a avec macron" },
-  { glyph: "ą", description: "Lettre minuscule latine a avec ogonek" },
-  { glyph: "å", description: "Lettre minuscule latine a avec anneau" },
-  { glyph: "ã", description: "Lettre minuscule latine a avec tilde" },
-  { glyph: "æ", description: "Ligature latine minuscule ae" },
-  { glyph: "b", description: "Lettre minuscule latine b" },
-  { glyph: "c", description: "Lettre minuscule latine c" },
-  { glyph: "ć", description: "Lettre minuscule latine c avec accent aigu" },
-  { glyph: "č", description: "Lettre minuscule latine c avec caron" },
-  { glyph: "ç", description: "Lettre minuscule latine c avec cédille" },
-  { glyph: "ċ", description: "Lettre minuscule latine c avec point en chef" },
-  { glyph: "d", description: "Lettre minuscule latine d" },
-  { glyph: "ð", description: "Lettre minuscule latine eth" },
-  { glyph: "ď", description: "Lettre minuscule latine d avec caron" },
-  { glyph: "đ", description: "Lettre minuscule latine d barré" },
-  { glyph: "e", description: "Lettre minuscule latine e" },
-  { glyph: "é", description: "Lettre minuscule latine e avec accent aigu" },
-  { glyph: "ě", description: "Lettre minuscule latine e avec caron" },
+  {
+    glyph: "ä",
+    description:
+      "Une panse occupant trois quarts de la hauteur, ornée d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "å",
+    description:
+      "Une panse occupant trois quarts de la hauteur, surmontée d'un anneau qui lui confère une identité unique.",
+  },
+  {
+    glyph: "ã",
+    description:
+      "Une panse occupant trois quarts de la hauteur, accompagnée d'un tilde qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "æ",
+    description:
+      "Une ligature majestueuse combinant les formes de a et e, avec une panse oblique qui crée une harmonie visuelle.",
+  },
+  {
+    glyph: "b",
+    description:
+      "Un hampe droit et marqué, surmonté d'un empattement triangulaire, avec une panse couvrant deux niveaux de la hauteur, créant une lettre stable et ancrée.",
+  },
+  {
+    glyph: "c",
+    description:
+      "Une lettre semi-ouverte, où un sérif triangulaire en haut vient renforcer son identité. Sa base légèrement incurvée laisse apparaître un croissant de lune subtil.",
+  },
+  {
+    glyph: "ç",
+    description:
+      "Une lettre semi-ouverte, où un sérif triangulaire en haut vient renforcer son identité, accompagnée d'une cédille qui ajoute une touche distinctive.",
+  },
+  {
+    glyph: "d",
+    description:
+      "Un hampe droit avec un empattement triangulaire, accompagné d'une panse occupant deux niveaux de la hauteur, formant une structure bien équilibrée et lisible.",
+  },
+  {
+    glyph: "ð",
+    description:
+      "Un hampe droit avec un empattement triangulaire, accompagné d'une barre transversale qui renforce sa présence.",
+  },
+  {
+    glyph: "e",
+    description:
+      "Un œil occupé à un tiers de la lettre, influençant la perception du plein et du vide, et renforçant la dynamique de la courbe.",
+  },
+  {
+    glyph: "é",
+    description:
+      "Un œil occupé à un tiers de la lettre, surmonté d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "è",
+    description:
+      "Un œil occupé à un tiers de la lettre, accompagné d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "ê",
-    description: "Lettre minuscule latine e avec accent circonflexe",
+    description:
+      "Un œil occupé à un tiers de la lettre, marqué par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "ë", description: "Lettre minuscule latine e avec tréma" },
-  { glyph: "ė", description: "Lettre minuscule latine e avec point en chef" },
-  { glyph: "è", description: "Lettre minuscule latine e avec accent grave" },
-  { glyph: "ē", description: "Lettre minuscule latine e avec macron" },
-  { glyph: "ę", description: "Lettre minuscule latine e avec ogonek" },
-  { glyph: "f", description: "Lettre minuscule latine f" },
-  { glyph: "g", description: "Lettre minuscule latine g" },
-  { glyph: "ğ", description: "Lettre minuscule latine g avec brève" },
-  { glyph: "ģ", description: "Lettre minuscule latine g avec cédille" },
-  { glyph: "ġ", description: "Lettre minuscule latine g avec point en chef" },
-  { glyph: "h", description: "Lettre minuscule latine h" },
-  { glyph: "ħ", description: "Lettre minuscule latine h barré" },
-  { glyph: "i", description: "Lettre minuscule latine i" },
-  { glyph: "í", description: "Lettre minuscule latine i avec accent aigu" },
-  { glyph: "ǐ", description: "Lettre minuscule latine i avec caron" },
+  {
+    glyph: "ë",
+    description:
+      "Un œil occupé à un tiers de la lettre, orné d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "f",
+    description:
+      "Un hampe élancé avec un empattement triangulaire à la base et un autre au bout de la barre supérieure, conférant une présence affirmée à la lettre.",
+  },
+  {
+    glyph: "g",
+    description:
+      "Une panse oblique marquée, avec un jambage courbé, conférant à la lettre un mouvement naturel et une fluidité appréciable en texte continu.",
+  },
+  {
+    glyph: "ğ",
+    description:
+      "Une panse oblique marquée, avec un jambage courbé, accompagnée d'un brève qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "h",
+    description:
+      "Un hampe robuste, surmontée d'un sérif triangulaire, accompagné de deux autres empattements triangulaires à sa base, renforçant sa verticalité.",
+  },
+  {
+    glyph: "i",
+    description:
+      "Une structure simple, marquée par un empattement triangulaire à la base, qui ancre la lettre et accentue son individualité.",
+  },
+  {
+    glyph: "í",
+    description:
+      "Une structure simple, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "ì",
+    description:
+      "Une structure simple, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "î",
-    description: "Lettre minuscule latine i avec accent circonflexe",
+    description:
+      "Une structure simple, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "ï", description: "Lettre minuscule latine i avec tréma" },
-  { glyph: "ì", description: "Lettre minuscule latine i avec accent grave" },
-  { glyph: "ī", description: "Lettre minuscule latine i avec macron" },
-  { glyph: "į", description: "Lettre minuscule latine i avec ogonek" },
-  { glyph: "j", description: "Lettre minuscule latine j" },
-  { glyph: "k", description: "Lettre minuscule latine k" },
-  { glyph: "ķ", description: "Lettre minuscule latine k avec cédille" },
-  { glyph: "l", description: "Lettre minuscule latine l" },
-  { glyph: "ĺ", description: "Lettre minuscule latine l avec accent aigu" },
-  { glyph: "ľ", description: "Lettre minuscule latine l avec caron" },
-  { glyph: "ļ", description: "Lettre minuscule latine l avec cédille" },
-  { glyph: "ł", description: "Lettre minuscule latine l barré" },
-  { glyph: "m", description: "Lettre minuscule latine m" },
-  { glyph: "n", description: "Lettre minuscule latine n" },
-  { glyph: "ń", description: "Lettre minuscule latine n avec accent aigu" },
-  { glyph: "ň", description: "Lettre minuscule latine n avec caron" },
-  { glyph: "ņ", description: "Lettre minuscule latine n avec cédille" },
-  { glyph: "ŋ", description: "Lettre minuscule latine eng" },
-  { glyph: "ñ", description: "Lettre minuscule latine n avec tilde" },
-  { glyph: "o", description: "Lettre minuscule latine o" },
-  { glyph: "ó", description: "Lettre minuscule latine o avec accent aigu" },
-  { glyph: "ǒ", description: "Lettre minuscule latine o avec caron" },
+  {
+    glyph: "ï",
+    description:
+      "Une structure simple, ornée d'un tréma qui apporte une touche de distinction.",
+  },
+  {
+    glyph: "j",
+    description:
+      "Une hampe droite prolongée d'un jambage fluide, apportant équilibre et légèreté à la structure de la lettre.",
+  },
+  {
+    glyph: "k",
+    description:
+      "Un hampe avec un empattement triangulaire à la base, complété par une diagonale haute marquée par un autre empattement, lui conférant une dynamique unique.",
+  },
+  {
+    glyph: "l",
+    description:
+      "Une hampe droite et élancée, marquée par un empattement triangulaire en haut et en bas, renforçant sa verticalité et sa lisibilité.",
+  },
+  {
+    glyph: "ł",
+    description:
+      "Une hampe droite et élancée, accompagnée d'une barre oblique qui ajoute une dynamique unique.",
+  },
+  {
+    glyph: "m",
+    description:
+      "Une lettre structurée, où les empattements triangulaires sur les bases apportent une assise solide et confèrent une élégance naturelle.",
+  },
+  {
+    glyph: "n",
+    description:
+      "Similaire au 'm', mais avec une diagonale plus marquée, où les empattements triangulaires à la base assurent une présence forte dans le texte.",
+  },
+  {
+    glyph: "ñ",
+    description:
+      "Similaire au 'm', mais avec une diagonale plus marquée, surmontée d'un tilde qui ajoute une fluidité visuelle.",
+  },
+  {
+    glyph: "o",
+    description:
+      "Une panse oblique, sans œil interne, ce qui lui confère une silhouette distincte et une fluidité de lecture optimisée.",
+  },
+  {
+    glyph: "ó",
+    description:
+      "Une panse oblique, sans œil interne, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "ò",
+    description:
+      "Une panse oblique, sans œil interne, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "ô",
-    description: "Lettre minuscule latine o avec accent circonflexe",
+    description:
+      "Une panse oblique, sans œil interne, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "ö", description: "Lettre minuscule latine o avec tréma" },
-  { glyph: "ò", description: "Lettre minuscule latine o avec accent grave" },
   {
-    glyph: "ő",
-    description: "Lettre minuscule latine o avec double accent aigu",
+    glyph: "ö",
+    description:
+      "Une panse oblique, sans œil interne, ornée d'un tréma qui apporte une touche de distinction.",
   },
-  { glyph: "ō", description: "Lettre minuscule latine o avec macron" },
-  { glyph: "ø", description: "Lettre minuscule latine o barré" },
-  { glyph: "õ", description: "Lettre minuscule latine o avec tilde" },
-  { glyph: "œ", description: "Ligature latine minuscule oe" },
-  { glyph: "p", description: "Lettre minuscule latine p" },
-  { glyph: "þ", description: "Lettre minuscule latine thorn" },
-  { glyph: "q", description: "Lettre minuscule latine q" },
-  { glyph: "r", description: "Lettre minuscule latine r" },
-  { glyph: "ŕ", description: "Lettre minuscule latine r avec accent aigu" },
-  { glyph: "ř", description: "Lettre minuscule latine r avec caron" },
-  { glyph: "ŗ", description: "Lettre minuscule latine r avec cédille" },
-  { glyph: "s", description: "Lettre minuscule latine s" },
-  { glyph: "ś", description: "Lettre minuscule latine s avec accent aigu" },
-  { glyph: "š", description: "Lettre minuscule latine s avec caron" },
-  { glyph: "ş", description: "Lettre minuscule latine s avec cédille" },
   {
-    glyph: "ș",
-    description: "Lettre minuscule latine s avec virgule souscrite",
+    glyph: "ø",
+    description:
+      "Une panse oblique, sans œil interne, traversée par une barre oblique qui ajoute une dynamique unique.",
   },
-  { glyph: "ß", description: "Lettre minuscule latine sharp s (eszett)" },
-  { glyph: "t", description: "Lettre minuscule latine t" },
-  { glyph: "ŧ", description: "Lettre minuscule latine t barré" },
-  { glyph: "ť", description: "Lettre minuscule latine t avec caron" },
-  { glyph: "ţ", description: "Lettre minuscule latine t avec cédille" },
   {
-    glyph: "ț",
-    description: "Lettre minuscule latine t avec virgule souscrite",
+    glyph: "œ",
+    description:
+      "Une ligature majestueuse combinant les formes de o et e, avec une panse oblique qui crée une harmonie visuelle.",
   },
-  { glyph: "u", description: "Lettre minuscule latine u" },
-  { glyph: "ú", description: "Lettre minuscule latine u avec accent aigu" },
-  { glyph: "ǔ", description: "Lettre minuscule latine u avec caron" },
+  {
+    glyph: "p",
+    description:
+      "Une panse oblique associée à un jambage descendant, équilibrée par un empattement triangulaire, assurant un bon ancrage visuel.",
+  },
+  {
+    glyph: "q",
+    description:
+      "Une structure proche du 'p', mais inversée, avec un jambage plus affirmé et un empattement triangulaire apportant une stabilité visuelle.",
+  },
+  {
+    glyph: "r",
+    description:
+      "Une lettre compacte, où un sérif triangulaire à la base vient accentuer l'accroche du regard et dynamiser la lecture.",
+  },
+  {
+    glyph: "s",
+    description:
+      "Une courbure fluide, marquée par des empattements triangulaires aux extrémités, créant un contraste subtil entre mouvement et stabilité.",
+  },
+  {
+    glyph: "š",
+    description:
+      "Une courbure fluide, marquée par des empattements triangulaires aux extrémités, surmontée d'un caron qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "t",
+    description:
+      "Une barre supérieure légèrement irrégulière, évoquant les empattements Elzévirs, accompagné d'une hampe droite, créant un effet graphique distinct.",
+  },
+  {
+    glyph: "u",
+    description:
+      "Une structure arrondie, où les extrémités forment de légers triangles, donnant un effet naturel et équilibré à la lettre.",
+  },
+  {
+    glyph: "ú",
+    description:
+      "Une structure arrondie, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "ù",
+    description:
+      "Une structure arrondie, accompagnée d'un accent grave qui renforce son ancrage visuel.",
+  },
   {
     glyph: "û",
-    description: "Lettre minuscule latine u avec accent circonflexe",
+    description:
+      "Une structure arrondie, marquée par un accent circonflexe qui ajoute une dimension supplémentaire.",
   },
-  { glyph: "ü", description: "Lettre minuscule latine u avec tréma" },
   {
-    glyph: "ǘ",
-    description: "Lettre minuscule latine u avec tréma et accent aigu",
+    glyph: "ü",
+    description:
+      "Une structure arrondie, ornée d'un tréma qui apporte une touche de distinction.",
   },
-  { glyph: "ǚ", description: "Lettre minuscule latine u avec tréma et caron" },
   {
-    glyph: "ǜ",
-    description: "Lettre minuscule latine u avec tréma et accent grave",
+    glyph: "v",
+    description:
+      "Une première diagonale plus épaisse, où les empattements triangulaires sur les extrémités renforcent son assise et sa présence dans le texte.",
   },
-  { glyph: "ǖ", description: "Lettre minuscule latine u avec tréma et macron" },
-  { glyph: "ù", description: "Lettre minuscule latine u avec accent grave" },
   {
-    glyph: "ű",
-    description: "Lettre minuscule latine u avec double accent aigu",
+    glyph: "w",
+    description:
+      "Une combinaison de diagonales contrastées, où la première et la troisième diagonale sont plus épaisses que les autres, créant un effet de mouvement structuré.",
   },
-  { glyph: "ū", description: "Lettre minuscule latine u avec macron" },
-  { glyph: "ų", description: "Lettre minuscule latine u avec ogonek" },
-  { glyph: "ů", description: "Lettre minuscule latine u avec anneau" },
-  { glyph: "v", description: "Lettre minuscule latine v" },
-  { glyph: "w", description: "Lettre minuscule latine w" },
-  { glyph: "ẃ", description: "Lettre minuscule latine w avec accent aigu" },
   {
-    glyph: "ŵ",
-    description: "Lettre minuscule latine w avec accent circonflexe",
+    glyph: "x",
+    description:
+      "Une croisée de diagonales, où les extrémités triangulaires marquent les points d'ancrage, et où la diagonale gauche est plus épaisse, créant une dynamique unique.",
   },
-  { glyph: "ẅ", description: "Lettre minuscule latine w avec tréma" },
-  { glyph: "ẁ", description: "Lettre minuscule latine w avec accent grave" },
-  { glyph: "x", description: "Lettre minuscule latine x" },
-  { glyph: "y", description: "Lettre minuscule latine y" },
-  { glyph: "ý", description: "Lettre minuscule latine y avec accent aigu" },
   {
-    glyph: "ŷ",
-    description: "Lettre minuscule latine y avec accent circonflexe",
+    glyph: "y",
+    description:
+      "Une diagonale principale marquée, accompagnée d'une forme triangulaire à la base, et d'une diagonale plus fine, créant un contraste subtil.",
   },
-  { glyph: "ÿ", description: "Lettre minuscule latine y avec tréma" },
-  { glyph: "ỳ", description: "Lettre minuscule latine y avec accent grave" },
-  { glyph: "z", description: "Lettre minuscule latine z" },
-  { glyph: "ź", description: "Lettre minuscule latine z avec accent aigu" },
-  { glyph: "ž", description: "Lettre minuscule latine z avec caron" },
-  { glyph: "ż", description: "Lettre minuscule latine z avec point en chef" },
-  { glyph: "fi", description: "Ligature latine minuscule fi" },
-  { glyph: "fl", description: "Ligature latine minuscule fl" },
-  { glyph: "ª", description: "Indicateur ordinal féminin" },
-  { glyph: "º", description: "Indicateur ordinal masculin" },
-  { glyph: "0", description: "Chiffre zéro" },
-  { glyph: "1", description: "Chiffre un" },
-  { glyph: "2", description: "Chiffre deux" },
-  { glyph: "3", description: "Chiffre trois" },
-  { glyph: "4", description: "Chiffre quatre" },
-  { glyph: "5", description: "Chiffre cinq" },
-  { glyph: "6", description: "Chiffre six" },
-  { glyph: "7", description: "Chiffre sept" },
-  { glyph: "8", description: "Chiffre huit" },
-  { glyph: "9", description: "Chiffre neuf" },
-  { glyph: "¹", description: "Exposant un" },
-  { glyph: "²", description: "Exposant deux" },
-  { glyph: "³", description: "Exposant trois" },
-  { glyph: "⁄", description: "Barre de fraction" },
-  { glyph: ".", description: "Point" },
-  { glyph: ",", description: "Virgule" },
-  { glyph: ":", description: "Deux-points" },
-  { glyph: ";", description: "Point-virgule" },
-  { glyph: "…", description: "Points de suspension" },
-  { glyph: "!", description: "Point d'exclamation" },
-  { glyph: "¡", description: "Point d'exclamation inversé" },
-  { glyph: "?", description: "Point d'interrogation" },
-  { glyph: "¿", description: "Point d'interrogation inversé" },
-  { glyph: "·", description: "Point médian" },
-  { glyph: "•", description: "Puces ou point médian utilisé pour les listes" },
-  { glyph: "*", description: "Astérisque" },
-  { glyph: "#", description: "Dièse" },
-  { glyph: "/", description: "Barre oblique" },
-  { glyph: "\\", description: "Barre oblique inversée" },
-  { glyph: "(", description: "Parenthèse ouvrante" },
-  { glyph: ")", description: "Parenthèse fermante" },
-  { glyph: "{", description: "Accolade ouvrante" },
-  { glyph: "}", description: "Accolade fermante" },
-  { glyph: "[", description: "Crochet ouvrant" },
-  { glyph: "]", description: "Crochet fermant" },
-  { glyph: "-", description: "Trait d'union" },
-  { glyph: "–", description: "Tiret demi-cadratin" },
-  { glyph: "—", description: "Tiret cadratin" },
-  { glyph: "_", description: "Tiret bas" },
-  { glyph: "‚", description: "Virgule basse" },
-  { glyph: "„", description: "Guillemet bas" },
-  { glyph: "“", description: "Guillemet ouvrant" },
-  { glyph: "”", description: "Guillemet fermant" },
-  { glyph: "‘", description: "Apostrophe ouvrant" },
-  { glyph: "’", description: "Apostrophe fermant" },
-  { glyph: "«", description: "Guillemet français ouvrant" },
-  { glyph: "»", description: "Guillemet français fermant" },
-  { glyph: "‹", description: "Guillemet simple ouvrant" },
-  { glyph: "›", description: "Guillemet simple fermant" },
   {
-    glyph: "»’",
-    description: "Guillemet français fermant suivi d'une apostrophe",
+    glyph: "ý",
+    description:
+      "Une diagonale principale marquée, surmontée d'un accent aigu qui ajoute une élégance visuelle.",
   },
-  { glyph: "¢", description: "Symbole du cent" },
-  { glyph: "$", description: "Symbole du dollar" },
-  { glyph: "€", description: "Symbole de l'euro" },
-  { glyph: "ƒ", description: "Symbole du florin" },
-  { glyph: "£", description: "Symbole de la livre sterling" },
-  { glyph: "¥", description: "Symbole du yen" },
-  { glyph: "+", description: "Signe plus" },
-  { glyph: "−", description: "Signe moins" },
-  { glyph: "×", description: "Signe de multiplication" },
-  { glyph: "÷", description: "Signe de division" },
-  { glyph: "=", description: "Signe égal" },
-  { glyph: "≠", description: "Signe différent de" },
-  { glyph: ">", description: "Signe supérieur à" },
-  { glyph: "<", description: "Signe inférieur à" },
-  { glyph: "≥", description: "Signe supérieur ou égal à" },
-  { glyph: "≤", description: "Signe inférieur ou égal à" },
-  { glyph: "±", description: "Signe plus ou moins" },
-  { glyph: "≈", description: "Signe approximativement égal à" },
-  { glyph: "~", description: "Tilde" },
-  { glyph: "¬", description: "Signe de négation" },
-  { glyph: "^", description: "Accent circonflexe" },
-  { glyph: "∞", description: "Symbole de l'infini" },
-  { glyph: "%", description: "Signe pourcentage" },
-  { glyph: "‰", description: "Signe pour mille" },
-  { glyph: "☀", description: "Symbole du soleil" },
-  { glyph: "★", description: "Étoile pleine" },
-  { glyph: "☆", description: "Étoile vide" },
-  { glyph: "☽", description: "Symbole de la lune croissante" },
-  { glyph: "☾", description: "Symbole de la lune décroissante" },
-  { glyph: "♠", description: "Symbole de pique" },
-  { glyph: "♡", description: "Symbole de cœur" },
-  { glyph: "♢", description: "Symbole de carreau" },
-  { glyph: "♣", description: "Symbole de trèfle" },
-  { glyph: "♤", description: "Symbole de pique vide" },
-  { glyph: "♥", description: "Symbole de cœur plein" },
-  { glyph: "♦", description: "Symbole de carreau plein" },
-  { glyph: "♧", description: "Symbole de trèfle vide" },
-  { glyph: "✦", description: "Étoile à quatre branches pleine" },
-  { glyph: "✧", description: "Étoile à quatre branches vide" },
-  { glyph: "✫", description: "Étoile à cinq branches avec cercle" },
-  { glyph: "✬", description: "Étoile à cinq branches pleine avec cercle" },
-  { glyph: "✶", description: "Étoile à six branches" },
-  { glyph: "✷", description: "Étoile à huit branches" },
-  { glyph: "✹", description: "Étoile à douze branches" },
-  { glyph: "@", description: "Arobase" },
-  { glyph: "&", description: "Esperluette" },
-  { glyph: "¶", description: "Symbole de paragraphe" },
-  { glyph: "§", description: "Symbole de section" },
-  { glyph: "©", description: "Symbole de copyright" },
-  { glyph: "°", description: "Symbole de degré" },
-  { glyph: "|", description: "Barre verticale" },
-  { glyph: "¦", description: "Barre verticale discontinue" },
-  { glyph: "†", description: "Croix de obèle" },
-  { glyph: "‡", description: "Double croix de obèle" },
+  {
+    glyph: "z",
+    description:
+      "Une structure angulaire, où des déformations triangulaires aux extrémités accentuent l'impact visuel, et où la diagonale centrale plus épaisse renforce son dynamisme.",
+  },
+  {
+    glyph: "ž",
+    description:
+      "Une structure angulaire, surmontée d'un caron qui ajoute une élégance visuelle.",
+  },
+  {
+    glyph: "0",
+    description:
+      "Sa structure est proche du O majuscule, avec une forme elliptique stable. La panse est légèrement inclinée, mais moins oblique que celle des lettres, assurant une cohérence avec le reste de la typographie.",
+  },
+  {
+    glyph: "1",
+    description:
+      "Un trait vertical fin, reposant sur une base marquée par un petit triangle. Ce détail ajoute une signature visuelle discrète qui renforce son ancrage.",
+  },
+  {
+    glyph: "2",
+    description:
+      "Son tracé fluide se termine par une petite irrégularité en forme de triangle, un détail subtil qui perturbe légèrement la linéarité de la courbe.",
+  },
+  {
+    glyph: "3",
+    description:
+      "En haut de la lettre, une petite irrégularité triangulaire se détache, créant un léger contraste avec la régularité de ses courbes.",
+  },
+  {
+    glyph: "4",
+    description:
+      "Sa base est similaire à celle du 1, avec un trait fin souligné par un petit triangle, qui apporte une cohérence graphique entre ces deux chiffres.",
+  },
+  {
+    glyph: "5",
+    description:
+      "Une irrégularité triangulaire au début du tracé rompt légèrement la continuité de la forme, ajoutant une singularité subtile au chiffre.",
+  },
+  {
+    glyph: "6",
+    description:
+      "Une panse couvrant la moitié de la hauteur, mais contrairement aux autres lettres de la police, elle n'est pas oblique. Son tracé reste vertical et équilibré.",
+  },
+  {
+    glyph: "7",
+    description:
+      "À l'extrémité inférieure, une petite irrégularité triangulaire modifie légèrement la fin du trait, créant une variation subtile.",
+  },
+  {
+    glyph: "8",
+    description:
+      "Son épaisseur reste constante jusqu'au croisement des diagonales, où celle-ci rétrécit des deux côtés, donnant l'impression que l'un des tracés passe sous l'autre. Cela crée un effet de profondeur unique.",
+  },
+  {
+    glyph: "9",
+    description:
+      "Contrairement au 6, il ne possède pas de panse, mais un œil bien défini. Ce détail structure sa silhouette et assure un équilibre graphique cohérent avec le reste de la police.",
+  },
+  {
+    glyph: "⁄",
+    description:
+      "Élancée et bien équilibrée, elle divise l'espace avec justesse. Son inclinaison est légèrement marquée, assurant une distinction nette dans les compositions mathématiques et fractionnaires.",
+  },
+  {
+    glyph: ".",
+    description:
+      "Un cercle parfait, bien ancré dans la ligne de base. Sobre et efficace, il s'adapte à l'équilibre général de la typographie sans jamais rompre l'harmonie.",
+  },
+  {
+    glyph: ",",
+    description:
+      "Courbée avec délicatesse, elle suit une inclinaison subtile qui lui donne une dynamique propre, contrastant avec la rigidité des autres signes de ponctuation.",
+  },
+  {
+    glyph: ":",
+    description:
+      "Deux cercles parfaitement alignés, leur espacement pensé pour maintenir un rythme fluide dans la lecture.",
+  },
+  {
+    glyph: ";",
+    description:
+      "Composé d'une virgule et d'un point alignés avec précision. Sa légèrement courbe plus marquée en fait un trait d'union naturel entre les idées.",
+  },
+  {
+    glyph: "…",
+    description:
+      "Espacement régulier entre chaque point, créant un effet de continuité visuelle fluide sans rupture brutale.",
+  },
+  {
+    glyph: "!",
+    description:
+      "Sa hampe verticale s'affine légèrement vers le haut, conférant une présence forte sans rigidité excessive. Le point inférieur conserve l'ancrage circulaire typique de la police.",
+  },
+  {
+    glyph: "¡",
+    description:
+      "Un reflet parfait du point d'exclamation standard, mais dont l'équilibre visuel est soigneusement ajusté pour ne pas paraître inversé de manière arbitraire.",
+  },
+  {
+    glyph: "?",
+    description:
+      "Courbe fluide et continue, avec une silhouette légèrement asymétrique qui lui donne une expressivité unique. Le point final conserve un alignement parfait avec la base.",
+  },
+  {
+    glyph: "¿",
+    description:
+      "Forme identique à son pendant droit, mais avec une légère adaptation de l'inclinaison pour conserver une parfaite lisibilité dans les phrases inversées.",
+  },
+  {
+    glyph: "„",
+    description:
+      "Inspirés des formes calligraphiques, ces guillemets adoptent une courbure douce qui s'harmonise avec la fluidité des lettres.",
+  },
+  {
+    glyph: "«",
+    description:
+      "Forme légèrement angulaire, assurant une bonne lisibilité même dans des compositions denses.",
+  },
+  {
+    glyph: "»",
+    description:
+      "Forme légèrement angulaire, assurant une bonne lisibilité même dans des compositions denses.",
+  },
+  {
+    glyph: "'",
+    description:
+      "Compactes et bien définies, elles conservent une ouverture subtile qui évite un effet de fermeture trop strict.",
+  },
+  {
+    glyph: "‹",
+    description:
+      "Plus fins et plus resserrés que les guillemets doubles, ils sont parfaits pour les citations secondaires ou les indications typographiques.",
+  },
+  {
+    glyph: "›",
+    description:
+      "Plus fins et plus resserrés que les guillemets doubles, ils sont parfaits pour les citations secondaires ou les indications typographiques.",
+  },
+  {
+    glyph: "(",
+    description:
+      "Arrondies mais légèrement allongées, elles offrent un espace visuel optimal sans écraser le texte qu'elles entourent.",
+  },
+  {
+    glyph: ")",
+    description:
+      "Arrondies mais légèrement allongées, elles offrent un espace visuel optimal sans écraser le texte qu'elles entourent.",
+  },
+  {
+    glyph: "{",
+    description:
+      "Forme légèrement anguleuse dans ses courbes, apportant une sensation de structure plus marquée qu'une simple parenthèse.",
+  },
+  {
+    glyph: "}",
+    description:
+      "Forme légèrement anguleuse dans ses courbes, apportant une sensation de structure plus marquée qu'une simple parenthèse.",
+  },
+  {
+    glyph: "[",
+    description:
+      "Délibérément droits et rigoureux, ils encadrent leur contenu avec une précision stricte, parfaite pour les techniques d'annotations.",
+  },
+  {
+    glyph: "]",
+    description:
+      "Délibérément droits et rigoureux, ils encadrent leur contenu avec une précision stricte, parfaite pour les techniques d'annotations.",
+  },
+  {
+    glyph: "-",
+    description:
+      "Minimaliste et bien proportionné, il reste discret tout en maintenant un bon équilibre visuel.",
+  },
+  {
+    glyph: "–",
+    description:
+      "Plus allongé, il assure une séparation nette entre les éléments textuels sans paraître trop massif.",
+  },
+  {
+    glyph: "—",
+    description:
+      "Large et imposant, il marque des ruptures franches dans le texte tout en restant harmonieux avec les autres caractères.",
+  },
+  {
+    glyph: "_",
+    description:
+      "Fin et parfaitement horizontal, il garde une neutralité visuelle qui permet une intégration fluide dans le texte.",
+  },
+  {
+    glyph: "¢",
+    description:
+      "Symbole du cent, conçu pour conserver une cohérence avec la typographie.",
+  },
+  {
+    glyph: "$",
+    description:
+      "Symbole du dollar, bien équilibré, avec ses barres traversantes légèrement affinées.",
+  },
+  {
+    glyph: "€",
+    description:
+      "Symbole de l'euro, présentant une courbure douce et homogène.",
+  },
+  {
+    glyph: "ƒ",
+    description:
+      "Symbole du florin, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "£",
+    description:
+      "Symbole de la livre sterling, conservant une structure équilibrée, évitant un effet trop massif.",
+  },
+  {
+    glyph: "¥",
+    description:
+      "Symbole du yen, bien centré, avec des barres horizontales distinctes.",
+  },
+  {
+    glyph: "+",
+    description:
+      "Alignement parfait et proportions homogènes, assurant une lisibilité immédiate.",
+  },
+  {
+    glyph: "−",
+    description:
+      "Alignement parfait et proportions homogènes, assurant une lisibilité immédiate.",
+  },
+  {
+    glyph: "×",
+    description:
+      "Alignement parfait et proportions homogènes, assurant une lisibilité immédiate.",
+  },
+  {
+    glyph: "÷",
+    description:
+      "Alignement parfait et proportions homogènes, assurant une lisibilité immédiate.",
+  },
+  {
+    glyph: "=",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: "≠",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: ">",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: "<",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: "≥",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: "≤",
+    description:
+      "Tracés précis, évitant toute confusion dans l'interprétation visuelle.",
+  },
+  {
+    glyph: "±",
+    description:
+      "Formes bien définies, assurant une clarté optimale même dans des textes mathématiques complexes.",
+  },
+  {
+    glyph: "≈",
+    description:
+      "Formes bien définies, assurant une clarté optimale même dans des textes mathématiques complexes.",
+  },
+  {
+    glyph: "~",
+    description:
+      "Courbes harmonieuses et fluides, présentant toute asymétrie qui pourrait perturber l'équilibre du texte.",
+  },
+  {
+    glyph: "¬",
+    description:
+      "Signe de négation, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "^",
+    description:
+      "Accent circonflexe, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "∞",
+    description:
+      "Symbole de l'infini, avec des courbes harmonieuses et fluides, présentant toute asymétrie qui pourrait perturber l'équilibre du texte.",
+  },
+  {
+    glyph: "%",
+    description:
+      "Signe pourcentage, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "‰",
+    description:
+      "Signe pour mille, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "☀",
+    description:
+      "Symbole du soleil, avec un design subtil, rappelant les influences calligraphiques visibles dans certaines lettres de la typographie.",
+  },
+  {
+    glyph: "★",
+    description:
+      "Étoile pleine, légèrement allongée, s'intégrant naturellement à l'ensemble typographique.",
+  },
+  {
+    glyph: "☆",
+    description:
+      "Étoile creuse, légèrement allongée, s'intégrant naturellement à l'ensemble typographique.",
+  },
+  {
+    glyph: "☽",
+    description:
+      "Symbole de la lune croissante, avec un design subtil, rappelant les influences calligraphiques visibles dans certaines lettres de la typographie.",
+  },
+  {
+    glyph: "☾",
+    description:
+      "Symbole de la lune décroissante, avec un design subtil, rappelant les influences calligraphiques visibles dans certaines lettres de la typographie.",
+  },
+  {
+    glyph: "♠",
+    description:
+      "Symbole de pique, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♡",
+    description:
+      "Symbole de cœur, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♢",
+    description:
+      "Symbole de carreau, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♣",
+    description:
+      "Symbole de trèfle, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♤",
+    description:
+      "Symbole de pique creux, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♥",
+    description:
+      "Symbole de cœur plein, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♦",
+    description:
+      "Symbole de carreau plein, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "♧",
+    description:
+      "Symbole de trèfle creux, avec des formes nettes et équilibrées, assurant leur lisibilité tout en s'adaptant au style général de la typographie.",
+  },
+  {
+    glyph: "✦",
+    description:
+      "Étoile à quatre branches pleine, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✧",
+    description:
+      "Étoile à quatre branches vide, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✫",
+    description:
+      "Étoile à cinq branches avec cercle, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✬",
+    description:
+      "Étoile à cinq branches pleine avec cercle, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✶",
+    description:
+      "Étoile à six branches, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✷",
+    description:
+      "Étoile à huit branches, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "✹",
+    description:
+      "Étoile à douze branches, conçue pour une utilisation graphique, avec un bon équilibre entre finesse et lisibilité.",
+  },
+  {
+    glyph: "@",
+    description:
+      "Tracé fluide, légèrement incliné, en harmonie avec la calligraphie de la police.",
+  },
+  {
+    glyph: "&",
+    description:
+      "Élégante et bien structurée, elle adopte une approche manuscrite qui la rend particulièrement expressive.",
+  },
+  {
+    glyph: "¶",
+    description:
+      "Formes nettes et compactes, idéales pour les références textuelles et légales.",
+  },
+  {
+    glyph: "§",
+    description:
+      "Formes nettes et compactes, idéales pour les références textuelles et légales.",
+  },
+  {
+    glyph: "©",
+    description:
+      "Symbole de copyright, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "°",
+    description:
+      "Symbole de degré, conçu pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "|",
+    description:
+      "Barre verticale, conçue pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "¦",
+    description:
+      "Double barre, conçue pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "†",
+    description:
+      "Dague, conçue pour s'intégrer naturellement dans les compositions textuelles.",
+  },
+  {
+    glyph: "‡",
+    description:
+      "Double dague, conçue pour s'intégrer naturellement dans les compositions textuelles.",
+  },
 ];
 const fontHistoryList = [
  {
@@ -474,6 +1079,7 @@ const asciiGrid = document.querySelector(".asciiGrid");
 const bigLetter = document.getElementById("big-letter");
 const letterDesc = document.createElement("p");
 letterDesc.textContent = "Sélectionnez un glyphe pour voir son explication.";
+letterDesc.classList.add("letter-precision-p")
 document.querySelector(".letter-precision").appendChild(letterDesc);
 
 glyphs.forEach((glyph) => {
@@ -492,7 +1098,7 @@ glyphs.forEach((glyph) => {
     const selectedItems = document.querySelector(".ascii-grid-item.selected");
     console.log(selectedItems);
     selectedItems.style.backgroundColor = "#FFFFFF";
-    selectedItems.style.color = isBastleurActive ? "#09002B" : "#9C0204";
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
 
     bigLetter.style.transform = "rotate(12deg)";
     setTimeout(() => {
@@ -612,8 +1218,10 @@ let lastScrollPosition = 0; // Stocke la dernière position de défilement
 const basteleurItems = document.querySelectorAll(".basteleur");
 const body = document.querySelector(".body");
 const style = document.querySelector(".style");
-const rast = document.querySelector(".rast");
+// const rast = document.querySelector(".rast");
 const character = document.querySelector(".character");
+const visuels = document.querySelector(".visuels");
+const footer = document.querySelector(".footer");
 const character_flex = document.querySelector(".character-flex");
 const img = document.querySelector(".img");
 const info = document.querySelector(".info");
@@ -632,6 +1240,15 @@ const font_historyBasteleur = document.getElementById("basteleur");
 const text_explication1 = document.getElementById("text_explication1");
 const text_explication2 = document.getElementById("text_explication2");
 const text_explication3 = document.getElementById("text_explication3");
+
+const paragraphe1 = document.querySelector(".info-paragraphe1");
+const paragraphe2 = document.querySelector(".info-paragraphe2");
+const paragraphe3 = document.querySelector(".info-paragraphe3");
+
+const visuels1 = document.getElementById("visuels1");
+const visuels2 = document.getElementById("visuels2");
+const visuels3 = document.getElementById("visuels3");
+
 
 const textCercle = document.querySelector(".text-cercle");
 const texteDefilement = document.querySelector(".text-defilement");
@@ -692,6 +1309,11 @@ button.addEventListener("click", () => {
   img3.src = isBastleurActive ? MoonlightImages[2] : basteleurImages[2];
   img4.src = isBastleurActive ? MoonlightImages[3] : basteleurImages[3];
   img5.src = isBastleurActive ? MoonlightImages[4] : basteleurImages[4];
+  
+  
+  visuels1.src = isBastleurActive ? "./img/Magicien/visuel1.jpg" : "./img/Basteleur/visuel1.png";
+  visuels2.src = isBastleurActive ? "./img/Magicien/visuel2.jpg" : "./img/Basteleur/visuel2.png";
+  visuels3.src = isBastleurActive ? "./img/Magicien/visuel3.png" : "./img/Basteleur/visuel3.jpg";
 
   text_explication1.textContent = isBastleurActive
     ? "Je suis Basteleur Moonlight, une typographie oscillant entre ombre et lumière, inspirée du Tarot de Marseille et plus particulièrement du Bateleur. Créée en 2022 par le studio Keussel, je suis le fruit d’un mariage entre influences ésotériques, traditions typographiques et modernité"
@@ -703,21 +1325,21 @@ button.addEventListener("click", () => {
    ?  "Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau."
   : "Je suis un mélange savant : la douceur arrondie de la Cooper Black, combinée aux lettres irrégulières des manuscrits médiévaux. Une alchimie typographique où tradition et modernité s’unissent.";
   
-  text_explication1.innerHTML = isBastleurActive
-  ? "Je suis Basteleur Moonlight, une typographie qui danse entre ombre et lumière, fusionnant mysticisme et formes ancestrales. Née en 2022 sous la main du studio Keussel, mon essence puise dans le Tarot de Marseille, où le Bateleur incarne transformation et illusion. <br><br>Mes lettres portent l’héritage des gothiques et des capitales romaines, équilibrant tradition et modernité à travers l’influence des Elzévirs du XVIe siècle. Mon écriture vibre, jamais figée. Pances inclinées, traits irréguliers, je défie la rigidité, oscillant entre équilibre et mouvement.<br><br> Sculptée avec soin, chaque lettre est une incantation visuelle. Artisanale, imprévisible, imprégnée de brisures subtiles et de détails cachés, je suis une écriture qui insuffle une âme, une magie propre."
-  : "Je suis Basteleur Bold, une écriture sculptée entre mystère et lumière, entre charme ancien et modernité éclatante. Francis Chouquet, maître en lettrage, m’a donné vie en 2022, inspiré par les grands glyphes d’antan et les symboles ésotériques du Tarot de Marseille.";
-  text_explication2.innerHTML = isBastleurActive
-    ? "Le Magicien, figure du Tarot, incarne la transformation et la création. De cette essence mystique, chaque lettre devient une incantation graphique, un jeu subtil entre formes et symboles, évoquant un univers empli de secrets."
-    : "Mon nom vient du Bateleur, ce jongleur des possibles. Comme lui, le designer navigue entre inspiration et doute, projets inachevés et éclairs de génie. Ainsi suis-je née : une typographie audacieuse, captivante, gravée comme une incantation sur le papier.";
-  text_explication3.innerHTML = isBastleurActive
-   ?  "Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau."
-  : "Je suis un mélange savant : la douceur arrondie de la Cooper Black, combinée aux lettres irrégulières des manuscrits médiévaux. Une alchimie typographique où tradition et modernité s’unissent.";
+  paragraphe1.innerHTML = isBastleurActive
+  ? "Je suis Basteleur Moonlight, une typographie qui danse entre ombre et lumière, fusionnant mysticisme et formes ancestrales. Née en 2022 sous la main du studio Keussel, mon essence puise dans le Tarot de Marseille, où le Bateleur incarne transformation et illusion.<br/><br/>Mes lettres portent l’héritage des gothiques et des capitales romaines, équilibrant tradition et modernité à travers l’influence des Elzévirs du XVIe siècle. Mon écriture vibre, jamais figée. Pances inclinées, traits irréguliers, je défie la rigidité, oscillant entre équilibre et mouvement.<br/><br/>Sculptée avec soin, chaque lettre est une incantation visuelle. Artisanale, imprévisible, imprégnée de brisures subtiles et de détails cachés, je suis une écriture qui insuffle une âme, une magie propre."
+  :" Je suis Basteleur Bold, une typographie façonnée entre douceur et puissance, entre charme ancien et modernité éclatante. Créée en 2022 par Francis Chouquet, mon design s’inspire des glyphes d’autrefois et des signes mystiques du Tarot de Marseille.<br/><br/>Mon nom provient de la carte du Bateleur, ce jongleur des possibles, symbole du créateur jonglant entre inspiration et doute. Tout comme lui, je suis une typographie audacieuse, captivant le regard et imposant ma présence comme une incantation gravée.<br/><br/>Je suis un mélange de formes rondes et accueillantes, inspirées de la Cooper Black, et de lettres anciennes, issues des manuscrits médiévaux, où l’irrégularité était reine. Une typographie où la douceur rencontre la force et l’histoire."
+  paragraphe2.innerHTML = isBastleurActive
+  ? "Laissez-moi vous guider à travers mes formes, ces glyphes mystérieux que seul un esprit curieux saura apprivoiser. Je suis faite pour être vue, ressentie, et utilisée lors des grandes occasions, là où chaque mot compte. Parfaite pour les titres puissants, logos emblématiques, affiches théâtrales et tout projet nécessitant une présence visuelle forte. <br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.<br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.Cependant, ne me sollicitez pas pour des contextes stricts ou formels, où la lisibilité est essentielle. Je ne suis pas faite pour les longs corps de texte ou les projets nécessitant une clarté immédiate. Dans ces cas, la lisibilité prime sur la magie."
+  : "Laissez-moi vous révéler mes secrets. Mon écriture ancienne, façonnée par le temps, ne se fige jamais. Elle vibre, elle vit… Rien chez moi n’est parfaitement droit. Mes pances et mes yeux s’inclinent, défiant la rigidité des typographies classiques. En équilibre, en mouvement, mes lettres dansent comme une incantation.<br/><br/>Chaque détail est soigneusement ciselé, inspiré des anciens grimoires. Pourtant, mes traits portent des irrégularités maîtrisées, des brisures subtiles. Ludique et imprévisible, je suis une formule magique insaisissable. Artisanale, marquée du geste humain. Traditionnelle, puisant sa force dans les écritures d’autrefois.<br/><br/>Observez bien… Dans mon C majuscule, une lune se cache, fragment d’ombre figé dans l’encre. Mes empattements Elzévirs ancrent chaque lettre, défiant le temps et les modes. Entre rigueur et chaos, équilibre et spontanéité, ma dualité me rend unique.<br/><br/>Me choisir, c’est invoquer une écriture qui ne se contente pas d’exister… Elle insuffle une âme, une magie propre.";
+  paragraphe3.innerHTML = isBastleurActive
+  ? "Laissez-moi vous guider à travers mes formes, ces glyphes mystérieux que seul un esprit curieux saura apprivoiser. Je suis faite pour être vue, ressentie, et utilisée lors des grandes occasions, là où chaque mot compte. Parfaite pour les titres puissants, logos emblématiques, affiches théâtrales et tout projet nécessitant une présence visuelle forte. <br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.<br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.Cependant, ne me sollicitez pas pour des contextes stricts ou formels, où la lisibilité est essentielle. Je ne suis pas faite pour les longs corps de texte ou les projets nécessitant une clarté immédiate. Dans ces cas, la lisibilité prime sur la magie."
+  : "Quand une écriture puissante et envoûtante est requise, je réponds à l’appel !<br/><br/>Faites-moi danser dans des titres flamboyants, où je capte l’œil comme un héraut sur la place du marché.<br/><br/>Je brillerai sur des blasons graphiques, des identités visuelles pleines de panache et de caractère.<br/><br/>Je m’épanouirai sur des affiches d’aventure et de mystère, m’intégrant aux légendes et aux récits.<br/><br/>Enfin, je serai l’âme des brandings audacieux, apportant un cachet unique grâce à mon esprit médiéval et magique.";
 
 
   // Changer le texte du bouton
 
   // Alterner l'affichage des textes
-  bigLetter.style.color = isBastleurActive ? "#09002B" : "#9C0204";
+  bigLetter.style.color = isBastleurActive ? "#09002B" : "#EDC000";
   textCercle.style.display = isBastleurActive ? "none" : "block";
   texteDefilement.style.display = isBastleurActive ? "flex" : "none";
 
@@ -729,17 +1351,19 @@ button.addEventListener("click", () => {
       class: ".text_explication-container",
       secondaryColor: "#00569d",
     },
-    { name: rast, class: ".rast", secondaryColor: "#EDC000" },
-    { name: character, class: ".character", secondaryColor: "#9C0204" },
+    // { name: rast, class: ".rast", secondaryColor: "#EDC000" },
+    { name: character, class: ".character", secondaryColor: "#EDC000" },
     { name: img, class: ".img", secondaryColor: "#9C0204" },
     { name: info, class: ".info", secondaryColor: "#00569d" },
     { name: style, class: ".info", secondaryColor: "#EDC000" },
+    { name: visuels, class: ".visuels", secondaryColor: "#EDC000" },
+    { name: footer, class: ".footer", secondaryColor: "#9C0204" },
     {
       name: section_images2,
       class: ".section-images2",
-      secondaryColor: "#00569d",
+      secondaryColor: "#9C0204",
     },
-    { name: fontHistory, class: ".font-history", secondaryColor: "#EDC000" },
+    { name: fontHistory, class: ".font-history", secondaryColor: "#00569d" },
   ];
 
   listChangeColor.forEach((item) => {
@@ -764,7 +1388,7 @@ button.addEventListener("click", () => {
 
   // Appliquer la couleur du texte aux éléments sélectionnés
   if (selectedItems) {
-    selectedItems.style.color = isBastleurActive ? "#09002B" : "#9C0204";
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
   }
 
   // Appliquer la couleur de la sélection du texte
@@ -804,23 +1428,23 @@ const Rastlist = [
   },
 ];
 
-function changeText(buttonNumber) {
-  // Récupérer les éléments HTML
-  const textElement = document.getElementById("rast-text");
-  const titleElement = document.getElementById("rast-title"); // Ajoute cet élément dans ton HTML si besoin
+// function changeText(buttonNumber) {
+//   // Récupérer les éléments HTML
+//   // const textElement = document.getElementById("rast-text");
+//   const titleElement = document.getElementById("rast-title"); // Ajoute cet élément dans ton HTML si besoin
 
-  // Sélectionner le style actif (ici, "Basteleur" par défaut)
-  const selectedStyle = Rastlist.find((item) => item.style === "Basteleur");
+//   // Sélectionner le style actif (ici, "Basteleur" par défaut)
+//   const selectedStyle = Rastlist.find((item) => item.style === "Basteleur");
 
-  // Vérifier si le bouton correspond à une entrée valide
-  if (selectedStyle.details[buttonNumber]) {
-    const { title, paragraphe } = selectedStyle.details[buttonNumber];
+//   // Vérifier si le bouton correspond à une entrée valide
+//   if (selectedStyle.details[buttonNumber]) {
+//     const { title, paragraphe } = selectedStyle.details[buttonNumber];
 
-    // Mettre à jour le texte
-    if (titleElement) titleElement.innerHTML = title;
-    textElement.innerHTML = paragraphe;
-  } else {
-    textElement.innerHTML = "Invalid selection.";
-  }
-}
+//     // Mettre à jour le texte
+//     if (titleElement) titleElement.innerHTML = title;
+//     textElement.innerHTML = paragraphe;
+//   } else {
+//     textElement.innerHTML = "Invalid selection.";
+//   }
+// }
 

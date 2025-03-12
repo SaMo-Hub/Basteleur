@@ -252,22 +252,9 @@ body p::selection {
   font-size: 100px;
 }
 
-.rast {
-  background: #EDC000;
-  padding: 200px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
-}
 
-.rast-button {
-  -webkit-appearance: none;
-  appearance: none;
-  background: #0084ff;
-  padding: 12px;
-}
+
+
 .rast-title {
   font-size: 18px;
 }
@@ -287,9 +274,9 @@ body p::selection {
 }
 
 .character {
-  background-color: #9C0204;
+  background-color: #EDC000;
   
-  padding:  24px;
+  padding: 48px 24px;
   
 }
 .character-flex{
@@ -298,6 +285,7 @@ body p::selection {
   position: relative;
 }
 .asciiGrid {
+  margin-top: 48px;
   height: fit-content;
   display: grid;
   grid-template-columns: repeat(7, 0fr);
@@ -307,7 +295,7 @@ body p::selection {
 }
 @media (min-width: 1280px) {
   .asciiGrid {
-    grid-template-columns: repeat(6, 1fr); /* 3 colonnes */
+    grid-template-columns: repeat(9, 1fr); /* 3 colonnes */
   }
 }
 
@@ -375,7 +363,7 @@ body p::selection {
   cursor: pointer;
   background-color: #ffffff;
   border-radius: 50%;
-  color: #9C0204;
+  color: #EDC000;
 
   transform: rotate(0deg); /* Aucune rotation par défaut */
   transition: transform 0.3s ease; /* Transition fluide */
@@ -404,6 +392,9 @@ body p::selection {
   position: sticky;
   top: 0;
   align-self: start; /* Permet d'assurer que l'élément respecte le sticky */
+}
+.letter-precision-p {
+ width: 70%;
 }
 
 .letter-title {
@@ -621,6 +612,8 @@ button img {
   overflow: hidden;
   position: relative;
   height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -693,13 +686,13 @@ button img {
 .text_explication{
   display: flex;
   gap: 24px;
-  width: 60%;
+  width: 50%;
   margin-left: auto;
 }
 
 .section-images2 {
   padding: 48px 24px;
-  background-color: #00569d;
+  background-color: #9C0204;
 }
 
 .section-images2 img {
@@ -717,7 +710,7 @@ button img {
 
 
 .font-history {
-  background: #EDC000;
+  background: #00569d;
   
   padding: 48px 24px;
 
@@ -725,6 +718,7 @@ button img {
 }
 .font-histor-contanier{
   width: 100%;
+  margin-top: 68px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
   justify-content: space-between;
@@ -735,7 +729,7 @@ button img {
 }
 
 .footer{
-  background-color: #00569d;
+  background-color: #9C0204;
   padding: 48px 24px;
 }
 .footer-title{
@@ -765,7 +759,7 @@ button img {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  margin-top: 24px;
+  margin-top: 80px;
   color: white;
 
 }
@@ -869,7 +863,7 @@ button img {
 
 .visuels {
   padding: 48px 24px;
-  background-color: #9C0204;
+  background-color: #EDC000;
 }
 
 .visuels img {
@@ -878,6 +872,7 @@ button img {
 }
 
 .visuels-grid{
+  margin-top: 48px;
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   width: 100%;
