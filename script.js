@@ -440,33 +440,33 @@ const glyphs = [
   { glyph: "‡", description: "Double croix de obèle" },
 ];
 const fontHistoryList = [
-  {
-    title: "Gothique script",
-    class: "gothique",
-    img: "./img/Lettrine/Onciale.svg",
-    paragraphe:
-      "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+ {
+  title: "Onciale",
+  class: "onciale",
+  img: "./img/Lettrine/Onciale.svg",
+  paragraphe:
+  "L'Onciale est une écriture manuscrite utilisée principalement entre le IIIe et le VIIIe siècle. Caractérisée par ses lettres arrondies et son tracé fluide, elle est souvent associée aux manuscrits religieux et aux premières formes d'écriture médiévale.",
   },
   {
-    title: "Gothique script",
-    class: "gothique",
-    img: "./img/Lettrine/Irlandaise.svg",
-    paragraphe:
-      "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  title: "Irlandaise-Saxonne",
+  class: "gothique",
+  img: "./img/Lettrine/Irlandaise.svg",
+  paragraphe:
+  "Développée entre le VIIe et le Xe siècle, l'écriture irlandaise-saxonne provient de la tradition insulaire des moines copistes. Elle se distingue par ses formes anguleuses et ses ligatures caractéristiques, visibles dans des œuvres comme le Livre de Kells.",
   },
   {
-    title: "Gothique script",
-    class: "gothique",
-    img: "./img/Lettrine/Basteleur-Bold.svg",
-    paragraphe:
-      "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  title: "Basteleur",
+  class: "basteleur",
+  img: "./img/Lettrine/Basteleur-Bold.svg",
+  paragraphe:
+  "Créée par Keussel Studio, cette police Serif / Elzevir / Réal s’inspire du Tarot de Marseille, en particulier du Bateleur, symbole de créativité et de renouveau. Irrégulière, ludique et artisanale, elle est idéale pour les titres.",
   },
   {
-    title: "Gothique ",
-    class: "gothique",
-    img: "./img/Lettrine/gothique.svg",
-    paragraphe:
-      "          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  title: "Gothique",
+  class: "gothique",
+  img: "./img/Lettrine/gothique.svg",
+  paragraphe:
+  "Popularisée à partir du XIIe siècle, l'écriture gothique se caractérise par ses formes anguleuses et compactes. Ce style a été adopté pour l'impression des premiers livres typographiques, comme la Bible de Gutenberg en 1455.",
   },
 ];
 
@@ -492,7 +492,7 @@ glyphs.forEach((glyph) => {
     const selectedItems = document.querySelector(".ascii-grid-item.selected");
     console.log(selectedItems);
     selectedItems.style.backgroundColor = "#FFFFFF";
-    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#9C0204";
 
     bigLetter.style.transform = "rotate(12deg)";
     setTimeout(() => {
@@ -508,11 +508,12 @@ glyphs.forEach((glyph) => {
 });
 
 const fontHistory = document.querySelector(".font-history");
+const font_histor_contanier = document.querySelector(".font-histor-contanier");
 fontHistoryList.forEach((font) => {
-  console.log(fontHistory);
 
   const div = document.createElement("div");
   const img = document.createElement("img");
+  img.id = font.class
   img.src = font.img;
   img.classList.add(`.${font.class}`);
   // div.classList.add("ascii-grid-item");
@@ -533,7 +534,7 @@ fontHistoryList.forEach((font) => {
   divText.appendChild(etoile);
   divText.appendChild(title);
   divText.appendChild(paragraphe);
-  fontHistory.appendChild(div);
+  font_histor_contanier.appendChild(div);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -609,23 +610,49 @@ document.addEventListener("DOMContentLoaded", function () {
 let lastScrollPosition = 0; // Stocke la dernière position de défilement
 
 const basteleurItems = document.querySelectorAll(".basteleur");
-
+const body = document.querySelector(".body");
 const style = document.querySelector(".style");
 const rast = document.querySelector(".rast");
 const character = document.querySelector(".character");
+const character_flex = document.querySelector(".character-flex");
 const img = document.querySelector(".img");
 const info = document.querySelector(".info");
+const text_explication = document.querySelector(".text_explication-container");
+const font_history = document.querySelector(".font-history");
+const section_images2 = document.querySelector(".section-images2");
 
 const button = document.getElementById("changeFont");
 const img1 = document.getElementById("img1");
 const img2 = document.getElementById("img2");
+const img3 = document.getElementById("img3");
+const img4 = document.getElementById("img4");
+const img5 = document.getElementById("img5");
+const font_historyBasteleur = document.getElementById("basteleur");
+
+const text_explication1 = document.getElementById("text_explication1");
+const text_explication2 = document.getElementById("text_explication2");
+const text_explication3 = document.getElementById("text_explication3");
+
 const textCercle = document.querySelector(".text-cercle");
 const texteDefilement = document.querySelector(".text-defilement");
 
 let isBastleurActive = false; // Suivi de l'état actuel
 
-const MoonlightImages = ["./img/MoonAlpahbet.png", "./img/MoonChar.png"];
-const basteleurImages = ["./img/BoldAlpabet.png", "./img/BoldChar.png"];
+const MoonlightImages = [
+  "./img/Magicien/img1.png",
+  "./img/Magicien/img2.png",
+  "./img/Magicien/img3.png",
+  "./img/Magicien/img4.png",
+  "./img/Magicien/img5.png",
+  ,
+];
+const basteleurImages = [
+  "./img/Basteleur/img1.png",
+  "./img/Basteleur/img2.png",
+  "./img/Basteleur/img3.png",
+  "./img/Basteleur/img4.png",
+  "./img/Basteleur/img5.png",
+];
 function clearSelected() {
   const selectedItems = document.querySelectorAll(".ascii-grid-item.selected");
   const selectedListItems = document.querySelectorAll(".ascii-grid-item");
@@ -656,23 +683,63 @@ button.addEventListener("click", () => {
     item.style.fontFamily = isBastleurActive ? "Basteleur" : "Basteleur-Bold";
   });
 
+  font_historyBasteleur.src = isBastleurActive ? "./img/Lettrine/Basteleur-Moonlight.svg" :  "./img/Lettrine/Basteleur-Bold.svg"
+   body.style.fontFamily = isBastleurActive ? "NeuMontreal" : "Pally"
   // Alterner les images
-  img1.src = isBastleurActive ? basteleurImages[0] : MoonlightImages[0];
-  img2.src = isBastleurActive ? basteleurImages[1] : MoonlightImages[1];
+  isBastleurActive;
+  img1.src = isBastleurActive ? MoonlightImages[0] : basteleurImages[0];
+  img2.src = isBastleurActive ? MoonlightImages[1] : basteleurImages[1];
+  img3.src = isBastleurActive ? MoonlightImages[2] : basteleurImages[2];
+  img4.src = isBastleurActive ? MoonlightImages[3] : basteleurImages[3];
+  img5.src = isBastleurActive ? MoonlightImages[4] : basteleurImages[4];
+
+  text_explication1.textContent = isBastleurActive
+    ? "Je suis Basteleur Moonlight, une typographie oscillant entre ombre et lumière, inspirée du Tarot de Marseille et plus particulièrement du Bateleur. Créée en 2022 par le studio Keussel, je suis le fruit d’un mariage entre influences ésotériques, traditions typographiques et modernité"
+    : "Je suis Basteleur Bold, une écriture sculptée entre mystère et lumière, entre charme ancien et modernité éclatante. Francis Chouquet, maître en lettrage, m’a donné vie en 2022, inspiré par les grands glyphes d’antan et les symboles ésotériques du Tarot de Marseille.";
+  text_explication2.textContent = isBastleurActive
+    ? "Le Magicien, figure du Tarot, incarne la transformation et la création. De cette essence mystique, chaque lettre devient une incantation graphique, un jeu subtil entre formes et symboles, évoquant un univers empli de secrets."
+    : "Mon nom vient du Bateleur, ce jongleur des possibles. Comme lui, le designer navigue entre inspiration et doute, projets inachevés et éclairs de génie. Ainsi suis-je née : une typographie audacieuse, captivante, gravée comme une incantation sur le papier.";
+  text_explication3.textContent = isBastleurActive
+   ?  "Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau."
+  : "Je suis un mélange savant : la douceur arrondie de la Cooper Black, combinée aux lettres irrégulières des manuscrits médiévaux. Une alchimie typographique où tradition et modernité s’unissent.";
+  
+  text_explication1.innerHTML = isBastleurActive
+  ? "Je suis Basteleur Moonlight, une typographie qui danse entre ombre et lumière, fusionnant mysticisme et formes ancestrales. Née en 2022 sous la main du studio Keussel, mon essence puise dans le Tarot de Marseille, où le Bateleur incarne transformation et illusion. <br><br>Mes lettres portent l’héritage des gothiques et des capitales romaines, équilibrant tradition et modernité à travers l’influence des Elzévirs du XVIe siècle. Mon écriture vibre, jamais figée. Pances inclinées, traits irréguliers, je défie la rigidité, oscillant entre équilibre et mouvement.<br><br> Sculptée avec soin, chaque lettre est une incantation visuelle. Artisanale, imprévisible, imprégnée de brisures subtiles et de détails cachés, je suis une écriture qui insuffle une âme, une magie propre."
+  : "Je suis Basteleur Bold, une écriture sculptée entre mystère et lumière, entre charme ancien et modernité éclatante. Francis Chouquet, maître en lettrage, m’a donné vie en 2022, inspiré par les grands glyphes d’antan et les symboles ésotériques du Tarot de Marseille.";
+  text_explication2.innerHTML = isBastleurActive
+    ? "Le Magicien, figure du Tarot, incarne la transformation et la création. De cette essence mystique, chaque lettre devient une incantation graphique, un jeu subtil entre formes et symboles, évoquant un univers empli de secrets."
+    : "Mon nom vient du Bateleur, ce jongleur des possibles. Comme lui, le designer navigue entre inspiration et doute, projets inachevés et éclairs de génie. Ainsi suis-je née : une typographie audacieuse, captivante, gravée comme une incantation sur le papier.";
+  text_explication3.innerHTML = isBastleurActive
+   ?  "Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau."
+  : "Je suis un mélange savant : la douceur arrondie de la Cooper Black, combinée aux lettres irrégulières des manuscrits médiévaux. Une alchimie typographique où tradition et modernité s’unissent.";
+
 
   // Changer le texte du bouton
 
   // Alterner l'affichage des textes
+  bigLetter.style.color = isBastleurActive ? "#09002B" : "#9C0204";
   textCercle.style.display = isBastleurActive ? "none" : "block";
   texteDefilement.style.display = isBastleurActive ? "flex" : "none";
 
   // Appliquer les styles aux éléments
   const listChangeColor = [
-    { name: rast, class: ".rast", secondaryColor: "#00569D" },
-    { name: character, class: ".character", secondaryColor: "#EDC000" },
+    { name: body, class: ".body", secondaryColor: "#9C0204" },
+    {
+      name: text_explication,
+      class: ".text_explication-container",
+      secondaryColor: "#00569d",
+    },
+    { name: rast, class: ".rast", secondaryColor: "#EDC000" },
+    { name: character, class: ".character", secondaryColor: "#9C0204" },
     { name: img, class: ".img", secondaryColor: "#9C0204" },
     { name: info, class: ".info", secondaryColor: "#00569d" },
-    { name: style, class: ".style", secondaryColor: "#EDC000" },
+    { name: style, class: ".info", secondaryColor: "#EDC000" },
+    {
+      name: section_images2,
+      class: ".section-images2",
+      secondaryColor: "#00569d",
+    },
+    { name: fontHistory, class: ".font-history", secondaryColor: "#EDC000" },
   ];
 
   listChangeColor.forEach((item) => {
@@ -697,7 +764,7 @@ button.addEventListener("click", () => {
 
   // Appliquer la couleur du texte aux éléments sélectionnés
   if (selectedItems) {
-    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#9C0204";
   }
 
   // Appliquer la couleur de la sélection du texte
@@ -756,3 +823,4 @@ function changeText(buttonNumber) {
     textElement.innerHTML = "Invalid selection.";
   }
 }
+

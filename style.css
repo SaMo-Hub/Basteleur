@@ -22,6 +22,10 @@
   font-family: Onciale;
   src: url("./fonts/Onciale.ttf");
 }
+@font-face {
+  font-family: Pally;
+  src: url("./fonts/Pally-Regular.otf");
+}
 a{
   text-decoration: none;
 }
@@ -85,7 +89,7 @@ body {
   color: white;
   padding: 0;
   margin: 0;
-  font-family: NeuMontreal;
+  font-family: Pally;
 }
 
 p {
@@ -134,11 +138,10 @@ body p::selection {
 .rond {
   width: 10px;
   height: 10px;
-  background-color: rgba(255, 255, 255, 0.422);
+  background-color: white;
   border-radius: 99999px;
 }
 .sous-titre {
-  color: rgba(255, 255, 255, 0.537);
   display: flex;
   justify-items: center;
   align-items: center;
@@ -150,7 +153,7 @@ body p::selection {
   position: relative;
   z-index: 10;
   background: #00569d;
-  padding: 24px;
+  padding: 48px 24px;
   padding-bottom: 100px;
 }
 
@@ -164,7 +167,9 @@ body p::selection {
   max-height: 3000px; /* Grande valeur pour couvrir tout le contenu */
   transition: max-height 0.3s ease-in-out; /* Transition de max-height */
 }
-
+.info-paragraphe{
+  font-size: 20px;
+}
 .info-title {
   color: #ffffff56;
   margin-bottom: 12px;
@@ -172,11 +177,9 @@ body p::selection {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  font-family: Basteleur-Bold;
 }
 
 .info-texte {
-  font-family: NeuMontreal;
   margin-right: 24px;
   font-size: 24px;
   display: flex;
@@ -215,7 +218,7 @@ body p::selection {
 
 .style {
   background-color: #edc000;
-  padding: 24px;
+  padding: 48px 24px;
 }
 .style-flex {
   margin-top: 50px;
@@ -285,13 +288,15 @@ body p::selection {
 
 .character {
   background-color: #9C0204;
+  
+  padding:  24px;
+  
+}
+.character-flex{
   display: flex;
-  padding: 0 24px;
-  padding-top: 200px;
   justify-content: space-between;
   position: relative;
 }
-
 .asciiGrid {
   height: fit-content;
   display: grid;
@@ -363,7 +368,7 @@ body p::selection {
   font-family: Basteleur-Bold;
   width: 30vw;
   height: 30vw;
-  font-size: 28vw;
+  font-size: 24vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,7 +403,6 @@ body p::selection {
   justify-items: center;
   position: sticky;
   top: 0;
-  padding-bottom: 104px;
   align-self: start; /* Permet d'assurer que l'élément respecte le sticky */
 }
 
@@ -465,16 +469,17 @@ button img {
 
 .text-cercle {
   font-family: Basteleur-Bold;
-  height: 100vh;
-  /* margin-bottom: 100vh; */
+  height: 40vh;
+  margin-top: 100vh;
   overflow: hidden;
   z-index: 0;
+  
 }
 .et {
   z-index: 20;
   position: absolute;
   color: white;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 5vw;
@@ -484,7 +489,7 @@ button img {
 .majuscules {
   z-index: 20;
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 80vw;
   transform: translate(-50%, -50%);
@@ -501,7 +506,7 @@ button img {
   z-index: 20;
 
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 55vw;
   transform: translate(-50%, -50%);
@@ -520,7 +525,7 @@ button img {
   z-index: 20;
 
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 70vw;
   transform: translate(-50%, -50%);
@@ -538,7 +543,7 @@ button img {
   z-index: 20;
 
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 45vw;
   transform: translate(-50%, -50%);
@@ -556,7 +561,7 @@ button img {
   z-index: 20;
 
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 30vw;
   transform: translate(-50%, -50%);
@@ -573,7 +578,7 @@ button img {
   z-index: 20;
 
   position: absolute;
-  top: 50%;
+  top: 70%;
   left: 50%;
   width: 18vw;
   transform: translate(-50%, -50%);
@@ -609,7 +614,7 @@ button img {
   } */
 
 .img {
-  padding:24px;
+  padding: 48px 24px;
   display: flex;
   gap: 12px;
   background: #9C0204;
@@ -652,7 +657,7 @@ button img {
 
 .button-moonlight {
   color:#edc000;
-  font-family: Basteleur;
+  font-family: Basteleur-Bold;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -668,7 +673,7 @@ button img {
   align-items: center;
   height: 25px;
   width:25px;
-  font-family: Basteleur-Bold;
+  font-family: Basteleur;
 
 }
 
@@ -686,15 +691,14 @@ button img {
 }
 
 .text_explication{
-  padding:200px 24px ;
   display: flex;
   gap: 24px;
-  width: 80%;
+  width: 60%;
   margin-left: auto;
 }
 
 .section-images2 {
-  padding: 100px 24px;
+  padding: 48px 24px;
   background-color: #00569d;
 }
 
@@ -714,24 +718,25 @@ button img {
 
 .font-history {
   background: #EDC000;
+  
+  padding: 48px 24px;
+
+
+}
+.font-histor-contanier{
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Colonnes adaptatives */
   justify-content: space-between;
-  padding: 0 24px;
-  padding-bottom: 100px;
   gap: 40px;
-  padding-top: 100px;
-
 }
-
 .font-etoile{
   font-size: 30px;
 }
 
 .footer{
-  margin: 24px;
-  margin-top: 200px;
+  background-color: #00569d;
+  padding: 48px 24px;
 }
 .footer-title{
   color: #ffffff54;
@@ -787,12 +792,34 @@ button img {
 
 }
 .button-secondary{
+  position: relative;
   width: fit-content;
   border: solid 1px white;
   color: #ffffff;
   border-radius: 99px;
   padding: 12px 12px 8px 12px;
+  overflow: hidden;
 }
+.button-secondary:hover{
+  transition: all 0.2s ease-out;
+
+  background: #ffffff2f;
+}
+.button-secondary p{
+   position: relative;
+}
+
+.bg-button{
+  inset: 0;
+  border-radius: 99px;
+  background: #ff0000;
+  position: absolute;
+  transform: translateY(100%);
+  width: 100%;
+  height: 100%;
+}
+
+
 .footer-BigText{
   font-size: 10vw;
 }
@@ -809,6 +836,7 @@ button img {
 }
 
 #retour {
+  top: 0%;
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
@@ -835,13 +863,13 @@ button img {
 }
 .text_explication-container{
   background: #00569d;
+  padding: 48px 24px;
 }
 
 
-
 .visuels {
-  padding: 100px 24px;
-  background-color: #00569d;
+  padding: 48px 24px;
+  background-color: #9C0204;
 }
 
 .visuels img {
@@ -850,7 +878,6 @@ button img {
 }
 
 .visuels-grid{
-  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   width: 100%;
