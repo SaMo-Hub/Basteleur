@@ -689,6 +689,40 @@ button img {
   width: 50%;
   margin-left: auto;
 }
+@media (min-width: 1280px) {
+  .text_explication {
+    width: 50%;
+  }
+}
+
+/* 💻 Écran moyen (Tablettes et petits laptops) */
+@media (max-width: 1024px) {
+  .text_explication {
+    width: 60%;
+  }
+}
+
+/* 📱 Tablette en mode portrait */
+@media (max-width: 768px) {
+  .text_explication {
+    width: 70%;
+  }
+}
+
+/* 📲 Mobile */
+@media (max-width: 600px) {
+  .text_explication {
+    width: 80%;
+  }
+}
+
+/* 📱 Petit mobile */
+@media (max-width: 400px) {
+  .text_explication {
+    width: 100%;
+  }
+}
+
 
 .section-images2 {
   padding: 48px 24px;

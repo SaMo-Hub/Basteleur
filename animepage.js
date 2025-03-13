@@ -8,7 +8,7 @@ function createLetter() {
 
   // Position aléatoire en hauteur
   let startY = Math.random() * window.innerHeight;
-  let startX = -150; // Commence hors de l'écran à gauche
+  let startX = -250; // Commence hors de l'écran à gauche
   let endX = window.innerWidth + 50; // Sort par la droite
   // let duration = 2 + Math.random() * 3; // Entre 2s et 5s
   let amplitude = (Math.random() * 1000) - 500; // Génère un nombre entre -500 et 500

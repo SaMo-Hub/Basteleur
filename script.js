@@ -1,7 +1,16 @@
 const lenis = new Lenis({
   autoRaf: true,
 });
+function getUrlParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
 
+// Récupérer l'ID
+const id = getUrlParam("id");
+
+// Afficher l'ID (ou l'utiliser pour autre chose)
+console.log("ID reçu :", id);
 // Listen for the scroll event and log the event data
 
 const glyphs = [
@@ -1253,8 +1262,7 @@ const visuels3 = document.getElementById("visuels3");
 const textCercle = document.querySelector(".text-cercle");
 const texteDefilement = document.querySelector(".text-defilement");
 
-let isBastleurActive = false; // Suivi de l'état actuel
-
+let isBastleurActive =  id =="basteleur" ?  true : false; // Suivi de l'état actuel
 const MoonlightImages = [
   "./img/Magicien/img1.png",
   "./img/Magicien/img2.png",
@@ -1285,6 +1293,118 @@ function clearSelected() {
 const buttonBg = document.querySelector(".button-bg");
 const buttonMoonlight = document.querySelector(".button-moonlight");
 const buttonBasteleur = document.querySelector(".button-basteleur");
+
+function isBastleurActivepage (isBastleurActive) {
+  console.log(isBastleurActive,"dshffdjgs");
+
+  buttonBg.style.transform = isBastleurActive
+    ? "translateX(00%)"
+    : "translateX(100%)";
+  buttonMoonlight.style.color = isBastleurActive ? "#edc000" : "#ffffff";
+  buttonBasteleur.style.color = isBastleurActive ? "#ffffff" : "#07002b";
+
+  isBastleurActive = !isBastleurActive; // Alterner entre true et false
+  const selectedItems = document.querySelector(".ascii-grid-item.selected");
+
+  // Changer la police des éléments basteleur
+  basteleurItems.forEach((item) => {
+    item.style.fontFamily = isBastleurActive ? "Basteleur" : "Basteleur-Bold";
+  });
+
+  font_historyBasteleur.src = isBastleurActive ? "./img/Lettrine/Basteleur-Moonlight.svg" :  "./img/Lettrine/Basteleur-Bold.svg"
+   body.style.fontFamily = isBastleurActive ? "NeuMontreal" : "Pally"
+  // Alterner les images
+  isBastleurActive;
+  img1.src = isBastleurActive ? MoonlightImages[0] : basteleurImages[0];
+  img2.src = isBastleurActive ? MoonlightImages[1] : basteleurImages[1];
+  img3.src = isBastleurActive ? MoonlightImages[2] : basteleurImages[2];
+  img4.src = isBastleurActive ? MoonlightImages[3] : basteleurImages[3];
+  img5.src = isBastleurActive ? MoonlightImages[4] : basteleurImages[4];
+  
+  
+  visuels1.src = isBastleurActive ? "./img/Magicien/visuel1.jpg" : "./img/Basteleur/visuel1.png";
+  visuels2.src = isBastleurActive ? "./img/Magicien/visuel2.jpg" : "./img/Basteleur/visuel2.png";
+  visuels3.src = isBastleurActive ? "./img/Magicien/visuel3.png" : "./img/Basteleur/visuel3.jpg";
+
+  text_explication1.textContent = isBastleurActive
+    ? "Je suis Basteleur Moonlight, une typographie oscillant entre ombre et lumière, inspirée du Tarot de Marseille et plus particulièrement du Bateleur. Créée en 2022 par le studio Keussel, je suis le fruit d’un mariage entre influences ésotériques, traditions typographiques et modernité"
+    : "Je suis Basteleur Bold, une écriture sculptée entre mystère et lumière, entre charme ancien et modernité éclatante. Francis Chouquet, maître en lettrage, m’a donné vie en 2022, inspiré par les grands glyphes d’antan et les symboles ésotériques du Tarot de Marseille.";
+  text_explication2.textContent = isBastleurActive
+    ? "Le Magicien, figure du Tarot, incarne la transformation et la création. De cette essence mystique, chaque lettre devient une incantation graphique, un jeu subtil entre formes et symboles, évoquant un univers empli de secrets."
+    : "Mon nom vient du Bateleur, ce jongleur des possibles. Comme lui, le designer navigue entre inspiration et doute, projets inachevés et éclairs de génie. Ainsi suis-je née : une typographie audacieuse, captivante, gravée comme une incantation sur le papier.";
+  text_explication3.textContent = isBastleurActive
+   ?  "Mon style puise dans les lettres gothiques et les capitales romaines, alliant rigidité médiévale et équilibre classique. Mon appartenance aux Elzévirs, famille typographique du XVIe siècle, scelle mon lien entre tradition et renouveau."
+  : "Je suis un mélange savant : la douceur arrondie de la Cooper Black, combinée aux lettres irrégulières des manuscrits médiévaux. Une alchimie typographique où tradition et modernité s’unissent.";
+  
+  paragraphe1.innerHTML = isBastleurActive
+  ? "Je suis Basteleur Moonlight, une typographie qui danse entre ombre et lumière, fusionnant mysticisme et formes ancestrales. Née en 2022 sous la main du studio Keussel, mon essence puise dans le Tarot de Marseille, où le Bateleur incarne transformation et illusion.<br/><br/>Mes lettres portent l’héritage des gothiques et des capitales romaines, équilibrant tradition et modernité à travers l’influence des Elzévirs du XVIe siècle. Mon écriture vibre, jamais figée. Pances inclinées, traits irréguliers, je défie la rigidité, oscillant entre équilibre et mouvement.<br/><br/>Sculptée avec soin, chaque lettre est une incantation visuelle. Artisanale, imprévisible, imprégnée de brisures subtiles et de détails cachés, je suis une écriture qui insuffle une âme, une magie propre."
+  :" Je suis Basteleur Bold, une typographie façonnée entre douceur et puissance, entre charme ancien et modernité éclatante. Créée en 2022 par Francis Chouquet, mon design s’inspire des glyphes d’autrefois et des signes mystiques du Tarot de Marseille.<br/><br/>Mon nom provient de la carte du Bateleur, ce jongleur des possibles, symbole du créateur jonglant entre inspiration et doute. Tout comme lui, je suis une typographie audacieuse, captivant le regard et imposant ma présence comme une incantation gravée.<br/><br/>Je suis un mélange de formes rondes et accueillantes, inspirées de la Cooper Black, et de lettres anciennes, issues des manuscrits médiévaux, où l’irrégularité était reine. Une typographie où la douceur rencontre la force et l’histoire."
+  paragraphe2.innerHTML = isBastleurActive
+  ? "Laissez-moi vous guider à travers mes formes, ces glyphes mystérieux que seul un esprit curieux saura apprivoiser. Je suis faite pour être vue, ressentie, et utilisée lors des grandes occasions, là où chaque mot compte. Parfaite pour les titres puissants, logos emblématiques, affiches théâtrales et tout projet nécessitant une présence visuelle forte. <br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.<br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.Cependant, ne me sollicitez pas pour des contextes stricts ou formels, où la lisibilité est essentielle. Je ne suis pas faite pour les longs corps de texte ou les projets nécessitant une clarté immédiate. Dans ces cas, la lisibilité prime sur la magie."
+  : "Laissez-moi vous révéler mes secrets. Mon écriture ancienne, façonnée par le temps, ne se fige jamais. Elle vibre, elle vit… Rien chez moi n’est parfaitement droit. Mes pances et mes yeux s’inclinent, défiant la rigidité des typographies classiques. En équilibre, en mouvement, mes lettres dansent comme une incantation.<br/><br/>Chaque détail est soigneusement ciselé, inspiré des anciens grimoires. Pourtant, mes traits portent des irrégularités maîtrisées, des brisures subtiles. Ludique et imprévisible, je suis une formule magique insaisissable. Artisanale, marquée du geste humain. Traditionnelle, puisant sa force dans les écritures d’autrefois.<br/><br/>Observez bien… Dans mon C majuscule, une lune se cache, fragment d’ombre figé dans l’encre. Mes empattements Elzévirs ancrent chaque lettre, défiant le temps et les modes. Entre rigueur et chaos, équilibre et spontanéité, ma dualité me rend unique.<br/><br/>Me choisir, c’est invoquer une écriture qui ne se contente pas d’exister… Elle insuffle une âme, une magie propre.";
+  paragraphe3.innerHTML = isBastleurActive
+  ? "Laissez-moi vous guider à travers mes formes, ces glyphes mystérieux que seul un esprit curieux saura apprivoiser. Je suis faite pour être vue, ressentie, et utilisée lors des grandes occasions, là où chaque mot compte. Parfaite pour les titres puissants, logos emblématiques, affiches théâtrales et tout projet nécessitant une présence visuelle forte. <br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.<br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.Cependant, ne me sollicitez pas pour des contextes stricts ou formels, où la lisibilité est essentielle. Je ne suis pas faite pour les longs corps de texte ou les projets nécessitant une clarté immédiate. Dans ces cas, la lisibilité prime sur la magie."
+  : "Quand une écriture puissante et envoûtante est requise, je réponds à l’appel !<br/><br/>Faites-moi danser dans des titres flamboyants, où je capte l’œil comme un héraut sur la place du marché.<br/><br/>Je brillerai sur des blasons graphiques, des identités visuelles pleines de panache et de caractère.<br/><br/>Je m’épanouirai sur des affiches d’aventure et de mystère, m’intégrant aux légendes et aux récits.<br/><br/>Enfin, je serai l’âme des brandings audacieux, apportant un cachet unique grâce à mon esprit médiéval et magique.";
+  console.log(isBastleurActive);
+  
+
+  // Changer le texte du bouton
+
+  // Alterner l'affichage des textes
+  bigLetter.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+  textCercle.style.display = isBastleurActive ? "none" : "block";
+  texteDefilement.style.display = isBastleurActive ? "flex" : "none";
+
+  // Appliquer les styles aux éléments
+  const listChangeColor = [
+    { name: body, class: ".body", secondaryColor: "#9C0204" },
+    {
+      name: text_explication,
+      class: ".text_explication-container",
+      secondaryColor: "#00569d",
+    },
+    // { name: rast, class: ".rast", secondaryColor: "#EDC000" },
+    { name: character, class: ".character", secondaryColor: "#EDC000" },
+    { name: img, class: ".img", secondaryColor: "#9C0204" },
+    { name: info, class: ".info", secondaryColor: "#00569d" },
+    { name: style, class: ".info", secondaryColor: "#EDC000" },
+    { name: visuels, class: ".visuels", secondaryColor: "#EDC000" },
+    { name: footer, class: ".footer", secondaryColor: "#9C0204" },
+    {
+      name: section_images2,
+      class: ".section-images2",
+      secondaryColor: "#9C0204",
+    },
+    { name: fontHistory, class: ".font-history", secondaryColor: "#00569d" },
+  ];
+
+  listChangeColor.forEach((item) => {
+    item.name.style.backgroundColor = isBastleurActive
+      ? "#07002b"
+      : item.secondaryColor;
+    let stylesSelection = document.createElement("style");
+
+    console.log(item.class);
+    stylesSelection.innerHTML = `
+      ${item.class} p::selection {
+        background-color: ${
+          isBastleurActive ? "#FFFFFF" : "#FFFFFF"
+        }; /* Nouvelle couleur de fond */
+        color: ${
+          isBastleurActive ? "#09002B" : item.secondaryColor
+        }; /* Nouvelle couleur du texte */
+      }
+    `;
+    document.head.appendChild(stylesSelection);
+  });
+
+  // Appliquer la couleur du texte aux éléments sélectionnés
+  if (selectedItems) {
+    selectedItems.style.color = isBastleurActive ? "#09002B" : "#EDC000";
+  }
+}
+
+isBastleurActivepage(isBastleurActive)
 button.addEventListener("click", () => {
   buttonBg.style.transform = isBastleurActive
     ? "translateX(00%)"
@@ -1334,7 +1454,8 @@ button.addEventListener("click", () => {
   paragraphe3.innerHTML = isBastleurActive
   ? "Laissez-moi vous guider à travers mes formes, ces glyphes mystérieux que seul un esprit curieux saura apprivoiser. Je suis faite pour être vue, ressentie, et utilisée lors des grandes occasions, là où chaque mot compte. Parfaite pour les titres puissants, logos emblématiques, affiches théâtrales et tout projet nécessitant une présence visuelle forte. <br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.<br/><br/>Ma fluidité et mes détails subtils brillent dans des contextes ludiques, créatifs et artistiques, ajoutant une dimension magique et mystérieuse. Idéale pour le branding, les affiches événementielles, les couvertures de livres, et même les cartes de tarot, j’apporte un soupçon d’énigme et de charme.Cependant, ne me sollicitez pas pour des contextes stricts ou formels, où la lisibilité est essentielle. Je ne suis pas faite pour les longs corps de texte ou les projets nécessitant une clarté immédiate. Dans ces cas, la lisibilité prime sur la magie."
   : "Quand une écriture puissante et envoûtante est requise, je réponds à l’appel !<br/><br/>Faites-moi danser dans des titres flamboyants, où je capte l’œil comme un héraut sur la place du marché.<br/><br/>Je brillerai sur des blasons graphiques, des identités visuelles pleines de panache et de caractère.<br/><br/>Je m’épanouirai sur des affiches d’aventure et de mystère, m’intégrant aux légendes et aux récits.<br/><br/>Enfin, je serai l’âme des brandings audacieux, apportant un cachet unique grâce à mon esprit médiéval et magique.";
-
+  console.log(isBastleurActive);
+  
 
   // Changer le texte du bouton
 

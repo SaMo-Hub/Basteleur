@@ -3,6 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+a{
+  text-decoration: none;
+
+}
+
 @font-face {
   font-family: Basteleur-Bold;
   src: url("./fonts/Basteleur-Bold.otf");
@@ -16,6 +22,60 @@ body {
   overflow: hidden;
 }
 
+.basteleur{
+  color: #EDC000;
+
+  width: 50%; /* Prend la moitié de la largeur de la page */
+  height: 100vh;
+  font-family: Basteleur-Bold;
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  background-color: #9C0204;
+  justify-content: center;
+  
+  
+}
+.basteleur a{
+  color: #EDC000;
+
+
+  
+  
+}
+.moonlight{
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Basteleur;
+  width: 50%; /* Prend la moitié de la largeur de la page */
+  height: 100vh;
+  color: white;
+  background-color: #121128;
+  font-family: Basteleur;
+
+}
+.moonlight a{
+  
+  color: white;
+ 
+}
+
+.basteleur_big_letter{
+  font-size: 25vw;
+  z-index: 20;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.basteleur_big_letter:hover{
+  rotate: -15deg;
+
+}
+
 .letter-container {
   display: flex;
   align-items: center;
@@ -23,18 +83,71 @@ body {
   width: 50%; /* Prend la moitié de la largeur de la page */
   height: 100vh;
   top: 0;
+  z-index: 2;
   overflow: hidden; /* Cacher les lettres une fois qu'elles dépassent */
 }
 
 .letter {
   position: absolute;
-  font-size: 2rem;
+  font-size: 9vw;
   font-weight: bold;
-  color: white;
+  color: rgba(255, 221, 0, 0.41);
   font-family: Basteleur-Bold;
 }
 
+.flex{
+  display: flex;
+}
+.falling-letters {
+  position: absolute;
+  top: -10%;
+  font-size: 48px;
+  color: #ffffff30;
+  font-family: Basteleur;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fall 3s linear infinite;
+}
+.droite{
+  top: -20%;
 
-.Moonnlight{
-  
+  left: 60%;
+}
+.droites{
+  top: -20%;
+  left: 70%;
+}
+.droites{
+  left: 85%;
+}
+.falling-letters span {
+  opacity: 0;
+
+  display: block;
+  animation: fadeIn 3s infinite;
+}
+
+/* Animation de chute */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+/* Animation d'apparition progressive */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity:0;
+  }
 }
