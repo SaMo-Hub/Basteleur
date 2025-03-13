@@ -776,7 +776,9 @@ button img {
   width: max-content;
   
 }
-
+.buttons{
+  margin-top: 12px;
+}
 .button-primary{
   background: #ffffff;
   color: #09002B;
