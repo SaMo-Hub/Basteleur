@@ -821,6 +821,16 @@ button img {
   width: fit-content;
 
 }
+.button-primary a{
+  color: #09002B;
+
+}
+.button-primary:hover{
+  background: #ffffffb1;
+ 
+  transition: all 0.2s ease-out;
+
+}
 .button-secondary{
   position: relative;
   width: fit-content;

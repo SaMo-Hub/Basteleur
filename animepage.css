@@ -73,8 +73,24 @@ body {
   transition: transform 0.3s ease-in-out;
 
 }
+.moonlight_big_letter:hover{
+  transform: rotate(-15deg);
+  transition: transform 0.2s ease-in-out;
+
+}
+.moonlight_big_letter{
+  font-size: 25vw;
+  z-index: 20;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+
+}
 .basteleur_big_letter:hover{
-  rotate: -15deg;
+  transform: rotate(15deg);
+  transition: transform 0.2s ease-in-out;
 
 }
 
