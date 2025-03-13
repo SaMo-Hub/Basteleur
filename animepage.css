@@ -70,6 +70,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease-in-out;
+
 }
 .basteleur_big_letter:hover{
   rotate: -15deg;
